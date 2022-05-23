@@ -1,13 +1,16 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
-export const Perfil = sequelize.define("perfiles", {
-  id_perfil: {
+export const Menu = sequelize.define("menu", {
+  id_menu: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  tipo: {
+  titulo: {
+    type: DataTypes.STRING,
+  },
+  url: {
     type: DataTypes.STRING,
   },
 });

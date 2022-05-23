@@ -35,12 +35,10 @@ perfilRouter.get("/:id", async (req, res) => {
 
 //crea ruta que borra un perfil
 perfilRouter.delete("/:id", async (req, res) => {
-  const perfiles = await Perfil.destroy({
+  await Perfil.destroy({
     where: { id_perfil: req.params.id },
   });
-  res
-    .status(204)
-    .json({ message: "tipos borrados exitosamente", data: { perfiles } });
+  res.status(204);
 });
 
 //crea ruta que modifica un perfil

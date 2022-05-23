@@ -18,5 +18,6 @@
             ..5. DBHOST //host donde se encuentra la base de datos
             ..6. DBPORT //port donde corre la base de datos
             ..7. DBNAME //nombre en especifico de la base de datos
-    6. Para ejecutar el proyecto en modo produccion corre `npm start` en una terminal
-    7. Para ejecutar el proyecto en modo desarrollo corre `npm run dev`. En el modo de desarrollo el proyecto se reinicia automaticamente despues de cada cambio
+    6. Para que se instalen las dependencias del proyecto ejecutar el comando `npm install` solo hace falta correrlo una vez
+    7. Para ejecutar el proyecto en modo produccion corre `npm start` en una terminal
+    8. Para ejecutar el proyecto en modo desarrollo corre `npm run dev`. En el modo de desarrollo el proyecto se reinicia automaticamente despues de cada cambio
