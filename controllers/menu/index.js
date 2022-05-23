@@ -35,9 +35,9 @@ menuRouter.delete("/:id", async (req, res) => {
 });
 
 menuRouter.put("/:id", async (req, res) => {
-  const { tipo } = req.body;
+  const { titulo, url } = req.body;
   const menues = await Menu.update(
-    { tipo },
+    { titulo, url },
     {
       where: { id_menu: req.params.id },
       returning: true,
