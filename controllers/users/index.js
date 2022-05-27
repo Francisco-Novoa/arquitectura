@@ -26,3 +26,4 @@ usersRouter.post("/", async (req, res) => {
     data: { user: user.username, id: user.id },
   });
 });
+
