@@ -10,4 +10,18 @@ export const Salud = sequelize.define("salud", {
     peso: {
         type: DataTypes.INTEGER,
     },
+    estatura: {
+        type: DataTypes.INTEGER,
+        comment: "aca se guarda encriptada la password usando bcrypt",
+    },
+    movilidad :{
+        type: DataTypes.BOOLEAN,
+    },
+    presion :{
+        type: DataTypes.INTEGER,
+    },
+    comentarios :{
+        type: DataTypes.STRING,
+    }
+
 });
