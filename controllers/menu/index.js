@@ -9,7 +9,7 @@ menuRouter.post("/", async (req, res) => {
     return res.status(400).send({ message: "titulo del menu es muy corto" });
   if (url.length < 3)
     return res.status(400).send({ message: "url del menu es muy corto" });
-  const menu = await Menu.create({ titulo, url });
+  const menues = await Menu.create({ titulo, url });
   res.status(201).json({ message: "menu creado exitosamente", data: { menues } });
 });
 

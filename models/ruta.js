@@ -19,7 +19,7 @@ export const Ruta = sequelize.define("actividad", {
   tiempo: {
     type: DataTypes.INTEGER
   },
-  imagen: {// No se si esto debiese ser un atributo.
+  imagen: {
     type: DataTypes.STRING
   },
   ubicacion: {
