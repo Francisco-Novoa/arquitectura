@@ -42,4 +42,6 @@ export const User = sequelize.define("usuarios", {
   derivar_a: {
     type: DataTypes.STRING,
   },
+}, {
+  freezeTableName: true
 });

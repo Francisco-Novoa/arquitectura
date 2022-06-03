@@ -19,7 +19,18 @@ User.belongsTo(Perfil, {
     allowNull: false,
   },
 });
-
+Mensajeria.belongsTo(User, {
+  foreignKey: {
+    name: "remitente"
+  }
+})
+Mensajeria.belongsTo(User, {
+  foreignKey: {
+    name: "emisor"
+  }
+})
+Salud.belongsTo(User);
+User.hasOne(Salud)
 Perfil.hasMany(User);
 Perfil.belongsToMany(Menu, { through: "menu_perfil" });
 Menu.belongsToMany(Perfil, { through: "menu_perfil" });

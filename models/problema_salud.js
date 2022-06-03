@@ -10,4 +10,6 @@ export const Problema_Salud = sequelize.define('problema_salud', {
     tipo: {
         type: DataTypes.STRING
     }
+}, {
+    freezeTableName: true
 })

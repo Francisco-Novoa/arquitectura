@@ -25,5 +25,7 @@ export const Actividad = sequelize.define("actividad", {
   estado: {
     type: DataTypes.BOOLEAN
   }
+}, {
+  freezeTableName: true
 });
 // Como hago la foreign Key para el id RUTAS

@@ -25,4 +25,6 @@ export const Ruta = sequelize.define("actividad", {
   ubicacion: {
     type: DataTypes.BOOLEAN
   }
+}, {
+  freezeTableName: true
 });

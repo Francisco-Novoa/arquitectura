@@ -14,14 +14,15 @@ export const Salud = sequelize.define("salud", {
         type: DataTypes.INTEGER,
         comment: "aca se guarda encriptada la password usando bcrypt",
     },
-    movilidad :{
+    movilidad: {
         type: DataTypes.BOOLEAN,
     },
-    presion :{
+    presion: {
         type: DataTypes.INTEGER,
     },
-    comentarios :{
+    comentarios: {
         type: DataTypes.STRING,
     }
-
+}, {
+    freezeTableName: true
 });

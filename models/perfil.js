@@ -10,4 +10,6 @@ export const Perfil = sequelize.define("perfiles", {
   tipo: {
     type: DataTypes.STRING,
   },
+}, {
+  freezeTableName: true
 });

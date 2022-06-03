@@ -22,5 +22,7 @@ export const Inscritos = sequelize.define("inscritos", {
   estado: {
     type: DataTypes.STRING
   }
+}, {
+  freezeTableName: true
 });
 // Como hago la foreign Key para el id usuario

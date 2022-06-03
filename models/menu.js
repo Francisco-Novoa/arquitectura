@@ -13,4 +13,6 @@ export const Menu = sequelize.define("menu", {
   url: {
     type: DataTypes.STRING,
   },
+}, {
+  freezeTableName: true
 });

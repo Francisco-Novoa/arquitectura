@@ -17,7 +17,13 @@ export const Mensajeria = sequelize.define("mensajeria", {
     type: DataTypes.DATE
   },
   estado: {
-    type: DataTypes.STRING
+    type: DataTypes.ENUM("enviado", "recibido"),
+    defaultValue: 'enviado',
   }
+}, {
+  freezeTableName: true
 });
+
+
+
 // Como hago la foreign Key para el id usuario
