@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
-export const Ruta = sequelize.define("actividad", {
+export const Ruta = sequelize.define("rutas", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -16,11 +16,8 @@ export const Ruta = sequelize.define("actividad", {
   dificultad: {
     type: DataTypes.INTEGER
   },
-  tiempo: {
+  duracion: {
     type: DataTypes.INTEGER
-  },
-  imagen: {
-    type: DataTypes.STRING
   },
   ubicacion: {
     type: DataTypes.BOOLEAN

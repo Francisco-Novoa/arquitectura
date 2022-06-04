@@ -21,6 +21,9 @@ export const Inscripcion = sequelize.define("inscripcion", {
   },
   estado: {
     type: DataTypes.STRING
+  },
+  tipo_usuario: {
+    type: DataTypes.ENUM("Cliente", "Instructor", "Ayudante")
   }
 }, {
   freezeTableName: true
