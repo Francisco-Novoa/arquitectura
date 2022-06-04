@@ -2,20 +2,19 @@ import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
 export const Cuenta_corriente = sequelize.define("cuenta_corriente", {
-  id: {
+    nro_cuenta: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true
   },
-  monto: {
-    type: DataTypes.INTEGER
+  titular: { //nombre de la cuenta
+    type: DataTypes.INTEGER,
+    comment: 'Aqui se guardara el nombre del titular de la cuenta'
   },
-  mov_cuenta_corriente: {
-      type: DataTypes.INTEGER
+  tipo_cuenta: {
+      type: DataTypes.ENUM('Cuenta Corriente/Cuenta Vista','Cuenta Ahorro')
   },
 
 }, { //options
     freezeTableName: true
 }
-
 );
