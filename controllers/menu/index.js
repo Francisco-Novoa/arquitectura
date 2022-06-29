@@ -4,46 +4,49 @@ import { Menu } from "../../models/index.js";
 export const menuRouter = express.Router();
 
 menuRouter.post("/", async (req, res) => {
-  const { titulo, url } = req.body;
+  const { titulo } = req.body;
   if (titulo.length < 3)
     return res.status(400).send({ message: "titulo del menu es muy corto" });
-  if (url.length < 3)
-    return res.status(400).send({ message: "url del menu es muy corto" });
-  const menues = await Menu.create({ titulo, url });
-  res.status(201).json({ message: "menu creado exitosamente", data: { menues } });
+  const menu = await Menu.create({ titulo });
+  res.status(201).json({ message: "menu creado exitosamente", data: { menu } });
 });
 
 menuRouter.get("/", async (req, res) => {
-  const menues = await Menu.findAll();
+  const menu = await Menu.findAll();
   res
     .status(200)
-    .json({ message: "menues obtenidos exitosamente", data: { menues } });
+    .json({ message: "menu obtenidos exitosamente", data: { menu } });
 });
 
 menuRouter.get("/:id", async (req, res) => {
-  const menues = await Menu.findByPk(req.params.id);
+  const menu = await Menu.findByPk(req.params.id);
+  if (!menu) return res.status(404).send({ message: "menu no encontrado" });
   res
     .status(200)
-    .json({ message: "menu obtenido exitosamente", data: { menues } });
+    .json({ message: "menu obtenido exitosamente", data: { menu } });
 });
 
 menuRouter.delete("/:id", async (req, res) => {
+  if (!(await Menu.findByPk(req.params.id)))
+    return res.status(404).send({ message: "menu no encontrado" });
   await Menu.destroy({
     where: { id_menu: req.params.id },
   });
-  res.status(204);
+  res.sendStatus(204);
 });
 
 menuRouter.put("/:id", async (req, res) => {
-  const { titulo, url } = req.body;
-  const menues = await Menu.update(
-    { titulo, url },
+  const { titulo } = req.body;
+  if (!(await Menu.findByPk(req.params.id)))
+    return res.status(404).send({ message: "menu no encontrado" });
+  const menu = await Menu.update(
+    { titulo },
     {
-      where: { id_menu: req.params.id },
+      where: { id: req.params.id },
       returning: true,
     }
   );
   res
     .status(200)
-    .json({ message: "menu modificados exitosamente", data: { menues } });
+    .json({ message: "menu modificados exitosamente", data: { menu } });
 });

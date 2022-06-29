@@ -1,28 +1,31 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
-export const Salud = sequelize.define("salud", {
+export const Salud = sequelize.define(
+  "salud",
+  {
     id_salud: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
     },
     peso: {
-        type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
     },
     estatura: {
-        type: DataTypes.INTEGER,
-        comment: "aca se guarda encriptada la password usando bcrypt",
+      type: DataTypes.INTEGER,
     },
     movilidad: {
-        type: DataTypes.BOOLEAN,
+      type: DataTypes.BOOLEAN,
     },
     presion: {
-        type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
     },
     comentarios: {
-        type: DataTypes.STRING,
-    }
-}, {
-    freezeTableName: true
-});
+      type: DataTypes.STRING,
+    },
+  },
+  {
+    freezeTableName: true,
+  }
+);

@@ -13,10 +13,10 @@ export const loginRouter = express.Router();
 
 loginRouter.post("/", async (req, res) => {
   try {
-    const { rut, password } = req.body;
-    if (!rut || !password)
+    const { correo, password } = req.body;
+    if (!correo || !password)
       return res.status(401).json({ error: "rut or password missing" });
-    const user = await User.findOne({ where: { rut } });
+    const user = await User.findOne({ where: { correo } });
 
     if (!user)
       return res.status(401).json({ error: "invalid rut or password" });
@@ -28,7 +28,7 @@ loginRouter.post("/", async (req, res) => {
 
     const token = jwt.sign({ rut: user.rut, id: user.id }, SECRET);
 
-    res.status(200).send({ token, username: user.username, id: user.id });
+    res.status(200).send({ token, nombre: user.nombre, id: user.id });
   } catch (error) {
     console.error(error);
   }

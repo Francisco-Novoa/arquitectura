@@ -1,5 +1,3 @@
-import { error } from "./logger.js";
-
 export const errorHandler = (err, request, response, next) => {
   if (err.name === "CastError") {
     return response.status(400).send({ error: "malformatted id" });
@@ -10,5 +8,6 @@ export const errorHandler = (err, request, response, next) => {
       error: "invalid token",
     });
   }
-  error(err.message);
+  console.error(err);
+  return response.status(500).json({ error: err.message });
 };
