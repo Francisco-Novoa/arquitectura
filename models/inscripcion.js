@@ -19,13 +19,22 @@ export const Inscripcion = sequelize.define(
       type: DataTypes.STRING,
     },
     tipo_pago: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM("Efectivo", "Tarjeta", "Cheque"),
     },
     estado: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM(
+        "Creada",
+        "Iniciada",
+        "Cancelada",
+        "Terminada",
+        "Retrasada",
+        "Eliminiada"
+      ),
+      defaultValue: "Creada",
     },
     tipo_usuario: {
       type: DataTypes.ENUM("Cliente", "Instructor", "Ayudante"),
+      defaultValue: "Cliente",
     },
   },
   {

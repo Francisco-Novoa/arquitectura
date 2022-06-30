@@ -37,6 +37,7 @@ menuRouter.delete("/:id", async (req, res) => {
 
 menuRouter.put("/:id", async (req, res) => {
   const { titulo } = req.body;
+
   if (!(await Menu.findByPk(req.params.id)))
     return res.status(404).send({ message: "menu no encontrado" });
   const menu = await Menu.update(

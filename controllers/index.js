@@ -15,21 +15,21 @@ import { rutasRouter } from "./rutas/index.js";
 import { imagenesRouter } from "./imagenes/index.js";
 import { noticiasRouter } from "./noticias/index.js";
 
-// import { TokenValidation } from "../utils/tokenValidation.js";
+import { TokenValidation } from "../utils/tokenValidation.js";
 
 export const MainRouter = express.Router();
 
 MainRouter.use("/login", loginRouter);
 MainRouter.use("/users", usersRouter);
 MainRouter.use("/actividad", actividadRouter);
-MainRouter.use("/perfil", perfilRouter);
-MainRouter.use("/menu", menuRouter);
+MainRouter.use("/perfil", TokenValidation, perfilRouter);
+MainRouter.use("/banco", TokenValidation, bancoRouter);
+MainRouter.use("/cc", TokenValidation, cuenta_corrienteRouter);
+MainRouter.use("/movcc", TokenValidation, movimiento_cuenta_corrienteRouter);
+MainRouter.use("/menu", TokenValidation, menuRouter);
+MainRouter.use("/inscripcion", TokenValidation, inscripcionRouter);
 MainRouter.use("/mensaje", msgRouter);
 MainRouter.use("/salud", saludRouter);
-MainRouter.use("/banco", bancoRouter);
-MainRouter.use("/inscripcion", inscripcionRouter);
-MainRouter.use("/cuentaCorriente", cuenta_corrienteRouter);
-MainRouter.use("/cuentaCorriente", movimiento_cuenta_corrienteRouter);
 MainRouter.use("/rutas", rutasRouter);
 MainRouter.use("/imagenes", imagenesRouter);
 MainRouter.use("/noticias", noticiasRouter);

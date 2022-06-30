@@ -55,7 +55,7 @@ Mensajeria.belongsTo(User, {
   },
 });
 
-await sequelize.sync({ force: true });
+//await sequelize.sync({ force: true });
 
 export {
   User,

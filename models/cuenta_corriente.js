@@ -10,7 +10,7 @@ export const Cuenta_corriente = sequelize.define(
     },
     titular: {
       //nombre de la cuenta
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       comment: "Aqui se guardara el nombre del titular de la cuenta",
     },
     tipo_cuenta: {

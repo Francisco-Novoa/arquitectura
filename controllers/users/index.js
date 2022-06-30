@@ -65,7 +65,7 @@ usersRouter.post("/", async (req, res) => {
     },
     { raw: true }
   );
-  const token = jwt.sign({ id: user._id, correo }, SECRET);
+  const token = jwt.sign({ rut: user.rut, id: user.id }, SECRET);
   res.status(201).json({
     message: "usuario creado exitosamente",
     data: { token, id: user.id, correo: user.correo, nombre },
@@ -171,6 +171,7 @@ usersRouter.delete("/:id", async (req, res) => {
   const id = req.params.id;
   if (!(await User.findByPk(id)))
     return res.status(400).send({ error: "Usuario no encontrado" });
+
   await User.update(
     { estado: "eliminado" },
     {

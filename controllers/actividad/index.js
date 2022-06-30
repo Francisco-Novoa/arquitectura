@@ -54,7 +54,6 @@ actividadRouter.delete("/:id", async (req, res) => {
   res.sendStatus(204);
 });
 
-//crea ruta que modifica un perfil
 actividadRouter.put("/:id", async (req, res) => {
   if (!(await Actividad.findByPk(req.params.id)))
     return res.status(404).send({ message: "actividad no encontrada" });

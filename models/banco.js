@@ -11,6 +11,7 @@ export const Banco = sequelize.define(
     },
     nombre: {
       type: DataTypes.STRING,
+      unique: true,
     },
   },
   {
