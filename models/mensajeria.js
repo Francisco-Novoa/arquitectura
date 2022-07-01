@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
+import Sequelize from "sequelize";
 
 export const Mensajeria = sequelize.define(
   "mensajeria",
@@ -17,6 +18,7 @@ export const Mensajeria = sequelize.define(
     },
     fecha: {
       type: DataTypes.DATE,
+      defaultValue: Sequelize.NOW,
     },
     estado: {
       type: DataTypes.ENUM("enviado", "recibido"),
@@ -27,5 +29,3 @@ export const Mensajeria = sequelize.define(
     freezeTableName: true,
   }
 );
-
-// Como hago la foreign Key para el id usuario

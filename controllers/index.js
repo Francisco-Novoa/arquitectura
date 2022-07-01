@@ -14,6 +14,7 @@ import { actividadRouter } from "./actividad/index.js";
 import { rutasRouter } from "./rutas/index.js";
 import { imagenesRouter } from "./imagenes/index.js";
 import { noticiasRouter } from "./noticias/index.js";
+import { problema_saludRouter } from "./problema_salud/index.js";
 
 import { TokenValidation } from "../utils/tokenValidation.js";
 
@@ -29,7 +30,8 @@ MainRouter.use("/movcc", TokenValidation, movimiento_cuenta_corrienteRouter);
 MainRouter.use("/menu", TokenValidation, menuRouter);
 MainRouter.use("/inscripcion", TokenValidation, inscripcionRouter);
 MainRouter.use("/mensaje", msgRouter);
-MainRouter.use("/salud", saludRouter);
+MainRouter.use("/salud", TokenValidation, saludRouter);
+MainRouter.use("/psalud", TokenValidation, problema_saludRouter);
 MainRouter.use("/rutas", rutasRouter);
 MainRouter.use("/imagenes", imagenesRouter);
 MainRouter.use("/noticias", noticiasRouter);

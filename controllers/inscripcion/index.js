@@ -119,7 +119,7 @@ inscripcionRouter.put("/:id", async (req, res) => {
     }
   );
   res.status(200).json({
-    message: "Resumen de inscripcion obtenido exitosamente",
+    message: "Inscripcion modificada exitosamente",
     data: { inscripcion },
   });
 });

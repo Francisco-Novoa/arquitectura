@@ -22,7 +22,10 @@ export const Ruta = sequelize.define(
       type: DataTypes.INTEGER,
     },
     ubicacion: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
+    },
+    comentario: {
+      type: DataTypes.STRING,
     },
   },
   {

@@ -4,7 +4,7 @@ import sequelize from "../database/database.js";
 export const Salud = sequelize.define(
   "salud",
   {
-    id_salud: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -16,10 +16,10 @@ export const Salud = sequelize.define(
       type: DataTypes.INTEGER,
     },
     movilidad: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.STRING,
     },
     presion: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     comentarios: {
       type: DataTypes.STRING,

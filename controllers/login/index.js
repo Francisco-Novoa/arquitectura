@@ -12,24 +12,20 @@ import { User } from "../../models/users.js";
 export const loginRouter = express.Router();
 
 loginRouter.post("/", async (req, res) => {
-  try {
-    const { correo, password } = req.body;
-    if (!correo || !password)
-      return res.status(401).json({ error: "rut or password missing" });
-    const user = await User.findOne({ where: { correo } });
+  const { correo, password } = req.body;
+  if (!correo || !password)
+    return res.status(401).json({ error: "correo or password missing" });
+  const user = await User.findOne({ where: { correo } });
 
-    if (!user)
-      return res.status(401).json({ error: "invalid rut or password" });
+  if (!user)
+    return res.status(401).json({ error: "invalid correo or password" });
 
-    const match = await bcrypt.compare(password, user.passwordHash);
+  const match = await bcrypt.compare(password, user.passwordHash);
 
-    if (!match)
-      return res.status(401).json({ error: "invalid rut or password" });
+  if (!match)
+    return res.status(401).json({ error: "invalid correo or password" });
 
-    const token = jwt.sign({ rut: user.rut, id: user.id }, SECRET);
+  const token = jwt.sign({ rut: user.rut, id: user.id }, SECRET);
 
-    res.status(200).send({ token, nombre: user.nombre, id: user.id });
-  } catch (error) {
-    console.error(error);
-  }
+  return res.status(200).send({ token, nombre: user.nombre, id: user.id });
 });

@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
+import Sequelize from "sequelize";
 
 export const Noticia = sequelize.define("noticias", {
   id: {
@@ -12,6 +13,7 @@ export const Noticia = sequelize.define("noticias", {
   },
   fecha: {
     type: DataTypes.DATE,
+    defaultValue: Sequelize.NOW,
   },
   encabezado: {
     type: DataTypes.STRING,

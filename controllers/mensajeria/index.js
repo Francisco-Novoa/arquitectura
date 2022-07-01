@@ -1,53 +1,105 @@
 import express from "express";
-import { Mensajeria } from "../../models/index.js";
+import { Mensajeria, User } from "../../models/index.js";
 
 export const msgRouter = express.Router();
 
 msgRouter.post("/", async (req, res) => {
-  const { titulo, cuerpo, emisor, remitente } = req.body;
-  if (!emisor || !remitente) {
-    return res.status(400).send({ message: "no se puede enviar un mensaje sin emisor o sin remitente" })
+  const { titulo, cuerpo, emisor: emisorId, remitente: remitenteId } = req.body;
+  if (!emisorId || !remitenteId) {
+    return res.status(400).send({
+      message: "no se puede enviar un mensaje sin emisor o sin remitente",
+    });
   }
+  const emisor = User.findByPk(emisorId);
+  if (!emisor) return res.status(404).send({ message: "emisor no encontrado" });
+  const remitente = User.findByPk(remitenteId);
+  if (!remitente)
+    return res.status(404).send({ message: "remitente no encontrado" });
   if (titulo.length < 3)
     return res.status(400).send({ message: "titulo del mensaje es muy corto" });
   if (cuerpo.length === 0)
-    return res.status(400).send({ message: "no se puede enviar un mensaje vacio" });
-  const fecha = new Date(Date.now())
-  const mensaje = await Mensajeria.create({ titulo, cuerpo, fecha });
-  res.status(201).json({ message: "mensaje creado exitosamente", data: { mensaje } });
+    return res
+      .status(400)
+      .send({ message: "no se puede enviar un mensaje vacio" });
+  const mensaje = await Mensajeria.create({
+    titulo,
+    cuerpo,
+    emisor: emisorId,
+    remitente: remitenteId,
+  });
+  res
+    .status(201)
+    .json({ message: "mensaje creado exitosamente", data: { mensaje } });
 });
 
-msgRouter.get("/", async (req, res) => { ///necesita validar usuario
+msgRouter.get("/", async (req, res) => {
   const mensaje = await Mensajeria.findAll();
   res
     .status(200)
-    .json({ message: "mensaje obtenidos exitosamente", data: { mensaje } });
+    .json({ message: "mensajes obtenidos exitosamente", data: { mensaje } });
 });
 
 msgRouter.get("/:id", async (req, res) => {
-  const mensaje = await Mensajeria.findByPk(req.params.id);
-  res
+  const id = req.params.id;
+  const mensaje = await Mensajeria.findByPk(id);
+  if (!mensaje)
+    return res.status(404).send({
+      message: "mensaje no encontrado",
+    });
+  return res
     .status(200)
     .json({ message: "mensaje obtenido exitosamente", data: { mensaje } });
 });
 
 msgRouter.delete("/:id", async (req, res) => {
+  const id = req.params.id;
+  if (!(await Mensajeria.findByPk(id)))
+    return res.status(404).send({
+      message: "mensaje no encontrado",
+    });
   await Mensajeria.destroy({
     where: { id: req.params.id },
   });
-  res.status(204);
+  return res.sendStatus(204);
 });
 
 msgRouter.put("/:id", async (req, res) => {
-  const { titulo, cuerpo, estado } = req.body;
+  const {
+    titulo,
+    cuerpo,
+    emisor: emisorId,
+    remitente: remitenteId,
+    estado,
+  } = req.body;
+  const id = req.params.id;
+  if (!(await Mensajeria.findByPk(id)))
+    return res.status(404).send({
+      message: "mensaje no encontrado",
+    });
+  if (!emisorId || !remitenteId) {
+    return res.status(400).send({
+      message: "no se puede enviar un mensaje sin emisor o sin remitente",
+    });
+  }
+  const emisor = User.findByPk(emisorId);
+  if (!emisor) return res.status(404).send({ message: "emisor no encontrado" });
+  const remitente = User.findByPk(remitenteId);
+  if (!remitente)
+    return res.status(404).send({ message: "remitente no encontrado" });
+  if (titulo.length < 3)
+    return res.status(400).send({ message: "titulo del mensaje es muy corto" });
+  if (cuerpo.length === 0)
+    return res
+      .status(400)
+      .send({ message: "no se puede enviar un mensaje vacio" });
   const mensaje = await Mensajeria.update(
-    { titulo, cuerpo, estado },
+    { titulo, cuerpo, emisor: emisorId, remitente: remitenteId, estado },
     {
-      where: { id_menu: req.params.id },
+      where: { id },
       returning: true,
     }
   );
-  res
+  return res
     .status(200)
     .json({ message: "mensaje modificado exitosamente", data: { mensaje } });
 });
