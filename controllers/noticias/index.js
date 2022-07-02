@@ -1,4 +1,5 @@
 import express from "express";
+import sequelize from "../../database/database.js";
 import { Noticia, User, Imagen } from "../../models/index.js";
 
 export const noticiasRouter = express.Router();
@@ -54,7 +55,14 @@ noticiasRouter.post("/", async (req, res) => {
 
 //crea ruta que obtiene todos los perfiles
 noticiasRouter.get("/", async (req, res) => {
-  const noticias = await Noticia.findAll({ include: Imagen });
+  const noticias = await sequelize.query(
+    `select n.id, n.titulo, n.fecha,
+        n.encabezado, n.cuerpo, n.prioridad,
+        u.nombre as username
+      from noticias n 
+      join usuarios u on n."usuarioId"  = u.id`
+  );
+  // const noticias = await Noticia.raw({ include: [Imagen, User] });
   return res
     .status(200)
     .json({ message: "Noticias obtenidas exitosamente", data: { noticias } });
