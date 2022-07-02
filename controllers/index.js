@@ -17,7 +17,7 @@ import { noticiasRouter } from "./noticias/index.js";
 import { problema_saludRouter } from "./problema_salud/index.js";
 import { weatherRouter } from "./weather/index.js";
 
-// import { TokenValidation } from "../utils/tokenValidation.js";
+import { TokenValidation } from "../utils/tokenValidation.js";
 
 export const MainRouter = express.Router();
 
@@ -25,9 +25,9 @@ MainRouter.use("/login", loginRouter);
 MainRouter.use("/users", usersRouter);
 MainRouter.use("/actividad", actividadRouter);
 MainRouter.use("/perfil", perfilRouter);
-MainRouter.use("/banco", bancoRouter);
-MainRouter.use("/cc", cuenta_corrienteRouter);
-MainRouter.use("/movcc", movimiento_cuenta_corrienteRouter);
+MainRouter.use("/banco", TokenValidation, bancoRouter);
+MainRouter.use("/cc", TokenValidation, cuenta_corrienteRouter);
+MainRouter.use("/movcc", TokenValidation, movimiento_cuenta_corrienteRouter);
 MainRouter.use("/menu", menuRouter);
 MainRouter.use("/inscripcion", inscripcionRouter);
 MainRouter.use("/mensaje", msgRouter);
