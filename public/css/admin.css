@@ -306,3 +306,14 @@ tr:hover{
 
 }
 
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+
+label{
+    font-size: 15px;
+}

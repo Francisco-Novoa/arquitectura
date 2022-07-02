@@ -195,3 +195,15 @@ usersRouter.get("/:id", async (req, res) => {
     data: { user },
   });
 });
+
+usersRouter.get("/", async (req, res) => {
+  const user = await User.findAll({raw:true});
+  user.map( (usuario)=> {
+    delete usuario.passwordHash;
+  }) 
+  res.status(200).json({
+    message: "usuario obtenido exitosamente",
+    data: { user },
+  });
+});
+

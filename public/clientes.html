@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DASHBOARD</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/css/admin.css">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+      integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js//clientes.js"></script>
    
 </head>
 <body>
@@ -82,7 +88,42 @@
         <main>
             <h1>Clientes</h1>
             <div class="cliente">
-               <table id="tablon">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>password</th>
+                            <th>rut</th>
+                            <th>correo</th>
+                            <th>nombre</th>
+                            <th>fecha_nacimiento</th>
+                            <th>genero</th>
+                            <th>fono</th>
+                            <th>direccion</th>
+                            <th>fono_emergencia</th>
+                            <th>nombre_emergencia</th>
+                            <th>estado</th>
+                            <th>derivar_a</th>
+                            <th>createdAt</th>
+                            <th>updatedAt</th>
+                            <th style="background-color:rgb(0, 255, 0);">editar</th>
+                            <th style="background-color:firebrick;">eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-clientes">
+                        
+                    </tbody>
+                    </table>
+                    <div>
+                    <div class="">
+                        <label for="crear-cliente-input">Añadir Clientes</label>
+                        <div class="">
+                            <input type="text" id="crear-cliente-input" />
+                            <button id="crear-cliente-button">Añadir Cliente</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- <table id="tablon">
                     <tr>
                         <th>Rut</th>
                         <th>Nombre completo</th>
@@ -98,81 +139,66 @@
                         <th>Creado en</th>
                         <th>Actualizado en</th>
                         <th></th>
-                    </tr>
-
-                    <tbody id="tableData">
-
-                    </tbody> 
-                    <form  onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-                        <div>
-                            <label for="">Rut: </label>
-                            <input type="text" name="rut">
-                        </div>
-                        <div>
-                            <label for="">Nombre completo:</label>
-                            <input type="text" name="nombre">
-                        </div>
-                        <div>  
-                            <label for="">Fecha de nacimiento:</label>
-                            <input type="text" name="fecha_nacimiento">
-                        </div>
-                        <div>
-                            <label for="">Correo: </label>
-                            <input type="text" name="correo">
-                        </div>
-                        <div>   
-                            <label for="">Genero:</label>
-                            <input type="text" name="genero">
-                        </div>
-                        <div>
-                            <label for="">Telefono: </label>
-                            <input type="text" name="fono">
-                        </div>
-                        <div>
-                            <label for="">Direccion: </label>
-                            <input type="text" name="direccion">
-                        </div>
-                        <div> 
-                            <label for="">Telefono de emergencia: </label>
-                            <input type="text" name="fono_emergencia">
-                        </div>
-                        <div>
-                            <label for="">Nombre de emergencia: </label>
-                            <input type="text" name="nombre_emergencia">
-                        </div>
-                        <div>   
-                            <label for="">Estado: </label>
-                            <input type="text" name="estado">
-                        </div>
-                        <div>
-                            <label for="">Derivar a: </label>
-                            <input type="text" name="derivar_a">
-                        </div>
-                        <div>
-                            <label for="">Creado en: </label>
-                            <input type="text" name="createdAt">
-                        </div>
-                        <div>
-                            <label for="">Actualizado en: </label>
-                            <input type="text" name="updatedAt">
-                        </div>
+                    </tr> -->
+                    <!-- <form  onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                        <div class="row">
+                            <div class="column">
+                                <div>
+                                    <label for="">Rut: </label>
+                                    <input type="text" name="rut">
+                                </div>
+                                <div>
+                                    <label for="">Nombre completo:</label>
+                                    <input type="text" name="nombre">
+                                </div>
+                                <div>  
+                                    <label for="">Fecha de nacimiento:</label>
+                                    <input type="text" name="fecha_nacimiento">
+                                </div>
+                                <div>
+                                    <label for="">Correo: </label>
+                                    <input type="text" name="correo">
+                                </div>
+                                <div>   
+                                    <label for="">Genero:</label>
+                                    <input type="text" name="genero">
+                                </div>
+                                
+                            </div>
+                            <div class="column">
+                                
+                                <div>
+                                    <label for="">Nombre de emergencia: </label>
+                                    <input type="text" name="nombre_emergencia">
+                                </div>
+                                <div>   
+                                    <label for="">Estado: </label>
+                                    <input type="text" name="estado">
+                                </div>
+                                <div>
+                                    <label for="">Derivar a: </label>
+                                    <input type="text" name="derivar_a">
+                                </div>
+                                <div>
+                                    <label for="">Creado en: </label>
+                                    <input type="text" name="createdAt">
+                                </div>
+                                <div>
+                                    <label for="">Actualizado en: </label>
+                                    <input type="text" name="updatedAt">
+                                </div>
+                            </div>
+                        </div>     
                         <div class="form-action-buttons">
                             <input type="submit" value="submit">
                         </div>
-                    </form>
-                    
-                
-                    
-               </table>
+                    </form>  
+               </table>-->
                
                <br>
 
-               <table id="myTable"></table>
-
             </div>
         </main>
-    </div>
-    
-    <script src="/clientes.js"></script>    
+    </div> 
 </body>
 </html>
