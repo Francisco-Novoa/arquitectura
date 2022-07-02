@@ -62,4 +62,15 @@ window.onload = async () => {
         });
     };
     loadNoticias();
+
+    const loadWeather = async () => {
+        try {
+            const weather = await axios.get("/api/weather?query=Santiago")
+            return weather
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    const weather = await loadWeather()
 }
