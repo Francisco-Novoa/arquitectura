@@ -84,12 +84,14 @@ window.onload = async () => {
 
   bottonEditarCliente.addEventListener("click", editarCliente);
 
-  // const eliminarBanco = id => async () => {
-  //   try {
-  //     const result = await axios.delete(`/api/banco/${id}`);
-  //     loadBancos();
-  //   } catch (error) {}
-  // };
+  const eliminarCliente = id => async () => {
+    try {
+      const result = await axios.delete(`/api/users/${id}`);
+      loadClientes();
+    } catch (error) {
+        llenarMensaje(id)(error.data.message);
+    }
+  };
 
   const tablaClientes = document.getElementById("tabla-clientes");
 
