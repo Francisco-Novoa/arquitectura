@@ -9,5 +9,6 @@ let DBPASS = process.env.DBPASS;
 let DBHOST = process.env.DBHOST;
 let DBPORT = process.env.DBPORT;
 let DBNAME = process.env.DBNAME;
+let WEATHERAPI = process.env.WEATHERAPI;
 
-export { PORT, SECRET, DBUSER, DBPASS, DBHOST, DBPORT, DBNAME };
+export { PORT, SECRET, DBUSER, DBPASS, DBHOST, DBPORT, DBNAME, WEATHERAPI };

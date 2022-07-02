@@ -15,6 +15,7 @@ import { rutasRouter } from "./rutas/index.js";
 import { imagenesRouter } from "./imagenes/index.js";
 import { noticiasRouter } from "./noticias/index.js";
 import { problema_saludRouter } from "./problema_salud/index.js";
+import { weatherRouter } from "./weather/index.js";
 
 // import { TokenValidation } from "../utils/tokenValidation.js";
 
@@ -35,3 +36,4 @@ MainRouter.use("/psalud", problema_saludRouter);
 MainRouter.use("/rutas", rutasRouter);
 MainRouter.use("/imagenes", imagenesRouter);
 MainRouter.use("/noticias", noticiasRouter);
+MainRouter.use("/weather", weatherRouter);
