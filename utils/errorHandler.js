@@ -9,5 +9,5 @@ export const errorHandler = (err, request, response, next) => {
     });
   }
   console.error(err);
-  return response.status(500).json({ error: err.message });
+  return response.status(500).json({ err });
 };
