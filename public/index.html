@@ -1,936 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>AndoTrekkeando</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta
-      name="keywords"
-      content="Go Hiking Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
-    />
-    <script type="application/x-javascript">
+
+<head>
+  <title>AndoTrekkeando</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Go Hiking Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+  <script type="application/x-javascript">
       addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
     </script>
-    <script src="./js/noticias.js"></script>
-    <!-- bootstrap-css -->
-    <link
-      href="css/bootstrap.css"
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-    />
-    <!--// bootstrap-css -->
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-    <!--// css -->
-    <!-- font-awesome icons -->
-    <link href="css/font-awesome.css" rel="stylesheet" />
-    <!-- //font-awesome icons -->
-    <!-- galeria -->
-    <link type="text/css" rel="stylesheet" href="css/cm-overlay.css" />
-    <!-- //galeria -->
+  <script src="js/landing.js"></script>
+  <!-- bootstrap-css -->
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+  <!--// bootstrap-css -->
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <!--// css -->
+  <!-- font-awesome icons -->
+  <link href="css/font-awesome.css" rel="stylesheet" />
+  <!-- //font-awesome icons -->
+  <!-- galeria -->
+  <link type="text/css" rel="stylesheet" href="css/cm-overlay.css" />
+  <!-- //galeria -->
 
-    <!-- fuente -->
-    <link
-      href="//fonts.googleapis.com/css?family=Kaushan+Script&amp;subset=latin-ext"
-      rel="stylesheet"
-    />
-    <link
-      href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
-      rel="stylesheet"
-    />
+  <!-- fuente -->
+  <link href="//fonts.googleapis.com/css?family=Kaushan+Script&amp;subset=latin-ext" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+    rel="stylesheet" />
 
-    <!-- //fuente -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/SmoothScroll.min.js"></script>
-    <script src="js/jarallax.js"></script>
-    <script type="text/javascript">
-      jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-          event.preventDefault();
-          $("html,body").animate(
-            { scrollTop: $(this.hash).offset().top },
-            1000
-          );
-        });
+  <!-- //fuente -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/SmoothScroll.min.js"></script>
+  <script src="js/jarallax.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      $(".scroll").click(function (event) {
+        event.preventDefault();
+        $("html,body").animate(
+          { scrollTop: $(this.hash).offset().top },
+          1000
+        );
       });
-    </script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
-      integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <!-- axios esta aca -->
-  </head>
-  <body>
-    <!-- Banner Home-->
-    <div class="banner" id="home">
-      <div class="banner-dot">
-        <div class="header-top">
-          <div class="container banner-drop">
-            <div class="agile-logo">
-              <h1><a href="index.html">AndoTrekkeando</a></h1>
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+    integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- axios esta aca -->
+</head>
+
+<body>
+  <!-- Banner Home-->
+  <div class="banner" id="home">
+    <div class="banner-dot">
+      <div class="header-top">
+        <div class="container banner-drop">
+          <div class="agile-logo">
+            <h1><a href="index.html">AndoTrekkeando</a></h1>
+          </div>
+          <div class="header-right">
+            <nav>
+              <ul>
+                <li class="active">
+                  <a href="index.html"><span>Home</span></a>
+                </li>
+                <li>
+                  <a href="#about" class="scroll"><span>Nosotros</span></a>
+                </li>
+                <li>
+                  <a href="#services" class="scroll"><span>Servicios</span></a>
+                </li>
+                <li>
+                  <a href="#gallery" class="scroll"><span>Galeria</span></a>
+                </li>
+                <li>
+                  <a href="#blog" class="scroll"><span>Blog</span></a>
+                </li>
+                <li>
+                  <a href="#shop" class="scroll"><span>Tienda</span></a>
+                </li>
+                <li>
+                  <a href="#contact" class="scroll"><span>Contacto</span></a>
+                </li>
+              </ul>
+            </nav>
+            <div class="menu-icon"><span></span></div>
+          </div>
+          <div class="clearfix"></div>
+          <script>
+            (function ($) {
+              $(".menu-icon").on("click", function () {
+                $(this).toggleClass("open");
+                $(".container").toggleClass("nav-open");
+                $("nav ul li").toggleClass("animate");
+              });
+            })(jQuery);
+          </script>
+        </div>
+      </div>
+      <div class="w3layouts-slider">
+        <div class="container">
+          <div class="slider">
+            <div class="callbacks_container">
+              <ul class="rslides callbacks callbacks1" id="slider4">
+                <li>
+                  <div class="wthree-banner-grids">
+                    <div class="col-md-6 agileits-banner-left">
+                      <h3>Aventuras Nuevas</h3>
+                      <h4>Unete</h4>
+                    </div>
+                    <div class="col-md-6 agileinfo-banner-right">
+                      <p>
+                        Quieres vivir nuevas aventuras que te ayuden a salir
+                        de la rutina, unete a nosotros y descubre un mundo
+                        nuevo.
+                      </p>
+                      <div class="banner-border"></div>
+                      <div class="w3-button">
+                        <a href="#" data-toggle="modal" data-target="#myModal">Leer más</a>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="wthree-banner-grids">
+                    <div class="col-md-6 agileits-banner-left">
+                      <h3>Experiencia Única</h3>
+                      <h4>Naturaleza Pura</h4>
+                    </div>
+                    <div class="col-md-6 agileinfo-banner-right">
+                      <p>
+                        Integrate a nuestra comunidad que ya suma más de 500
+                        socios, planifica tus experiencias junto a nosotros.
+                      </p>
+                      <div class="banner-border"></div>
+                      <div class="w3-button">
+                        <a href="#" data-toggle="modal" data-target="#myModal">Leer más</a>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div class="header-right">
-              <nav>
-                <ul>
-                  <li class="active">
-                    <a href="index.html"><span>Home</span></a>
-                  </li>
-                  <li>
-                    <a href="#about" class="scroll"><span>Nosotros</span></a>
-                  </li>
-                  <li>
-                    <a href="#services" class="scroll"
-                      ><span>Servicios</span></a
-                    >
-                  </li>
-                  <li>
-                    <a href="#gallery" class="scroll"><span>Galeria</span></a>
-                  </li>
-                  <li>
-                    <a href="#blog" class="scroll"><span>Blog</span></a>
-                  </li>
-                  <li>
-                    <a href="#shop" class="scroll"><span>Tienda</span></a>
-                  </li>
-                  <li>
-                    <a href="#contact" class="scroll"><span>Contacto</span></a>
-                  </li>
-                </ul>
-              </nav>
-              <div class="menu-icon"><span></span></div>
-            </div>
-            <div class="clearfix"></div>
+            <script src="js/responsiveslides.min.js"></script>
             <script>
-              (function ($) {
-                $(".menu-icon").on("click", function () {
-                  $(this).toggleClass("open");
-                  $(".container").toggleClass("nav-open");
-                  $("nav ul li").toggleClass("animate");
+              $(function () {
+                $("#slider4").responsiveSlides({
+                  auto: true,
+                  pager: true,
+                  nav: true,
+                  speed: 500,
+                  namespace: "callbacks",
+                  before: function () {
+                    $(".events").append("<li>before event fired.</li>");
+                  },
+                  after: function () {
+                    $(".events").append("<li>after event fired.</li>");
+                  },
                 });
-              })(jQuery);
+              });
             </script>
           </div>
         </div>
-        <div class="w3layouts-slider">
-          <div class="container">
-            <div class="slider">
-              <div class="callbacks_container">
-                <ul class="rslides callbacks callbacks1" id="slider4">
-                  <li>
-                    <div class="wthree-banner-grids">
-                      <div class="col-md-6 agileits-banner-left">
-                        <h3>Aventuras Nuevas</h3>
-                        <h4>Unete</h4>
-                      </div>
-                      <div class="col-md-6 agileinfo-banner-right">
-                        <p>
-                          Quieres vivir nuevas aventuras que te ayuden a salir
-                          de la rutina, unete a nosotros y descubre un mundo
-                          nuevo.
-                        </p>
-                        <div class="banner-border"></div>
-                        <div class="w3-button">
-                          <a href="#" data-toggle="modal" data-target="#myModal"
-                            >Leer más</a
-                          >
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="wthree-banner-grids">
-                      <div class="col-md-6 agileits-banner-left">
-                        <h3>Experiencia Única</h3>
-                        <h4>Naturaleza Pura</h4>
-                      </div>
-                      <div class="col-md-6 agileinfo-banner-right">
-                        <p>
-                          Integrate a nuestra comunidad que ya suma más de 500
-                          socios, planifica tus experiencias junto a nosotros.
-                        </p>
-                        <div class="banner-border"></div>
-                        <div class="w3-button">
-                          <a href="#" data-toggle="modal" data-target="#myModal"
-                            >Leer más</a
-                          >
-                        </div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <script src="js/responsiveslides.min.js"></script>
-              <script>
-                $(function () {
-                  $("#slider4").responsiveSlides({
-                    auto: true,
-                    pager: true,
-                    nav: true,
-                    speed: 500,
-                    namespace: "callbacks",
-                    before: function () {
-                      $(".events").append("<li>before event fired.</li>");
-                    },
-                    after: function () {
-                      $(".events").append("<li>after event fired.</li>");
-                    },
-                  });
-                });
-              </script>
-            </div>
+      </div>
+    </div>
+  </div>
+  <!-- //Banner Home -->
+
+  <!-- Pop Up 1-->
+  <div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">¿Qué es el trekking?</h4>
+        </div>
+        <div class="modal-body">
+          <div class="agileits-w3layouts-info">
+            <img src="images/1.jpg" alt="" />
+            <p>
+              El trekking o excursionismo es una actividad física que consiste
+              en caminar por escenarios naturales, como montañas, bosques,
+              selvas, cañones o ríos. Se diferencia del senderismo en que la
+              modalidad del trekking requiere un mayor esfuerzo físico, ya que
+              mientras el recorrido realizado en senderismo suele tener un
+              grado de dificultad más bajo, debido a que sus rutas discurren
+              por senderos, vías y caminos señalizados, en el excursionismo
+              los recorridos se realizan a través de parajes aislados y sin
+              ninguna ayuda de señales o caminos, lo que representa un mayor
+              contacto con la naturaleza.
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <!-- //Banner Home -->
+  </div>
+  <!-- //Pop Up 1-->
 
-    <!-- Pop Up 1-->
-    <div
-      class="modal about-modal fade"
-      id="myModal"
-      tabindex="-1"
-      role="dialog"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title">¿Qué es el trekking?</h4>
-          </div>
-          <div class="modal-body">
-            <div class="agileits-w3layouts-info">
-              <img src="images/1.jpg" alt="" />
-              <p>
-                El trekking o excursionismo es una actividad física que consiste
-                en caminar por escenarios naturales, como montañas, bosques,
-                selvas, cañones o ríos. Se diferencia del senderismo en que la
-                modalidad del trekking requiere un mayor esfuerzo físico, ya que
-                mientras el recorrido realizado en senderismo suele tener un
-                grado de dificultad más bajo, debido a que sus rutas discurren
-                por senderos, vías y caminos señalizados, en el excursionismo
-                los recorridos se realizan a través de parajes aislados y sin
-                ninguna ayuda de señales o caminos, lo que representa un mayor
-                contacto con la naturaleza.
-              </p>
-            </div>
+  <!-- Pop Up 2-->
+  <div class="modal about-modal fade" id="myModal2" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Gabriel Rojas</h4>
+        </div>
+        <div class="modal-body">
+          <div class="agileits-w3layouts-info">
+            <img src="images/5.jpg" alt="" />
+            <p>
+              Empezar a hacer trekking para mí fue encontrar algo con lo que
+              he disfrutado mucho. Creo que el hacer actividades al aire libre
+              es un panorama bacán para salir de la rutina y para dar un
+              respiro.
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <!-- //Pop Up 1-->
+  </div>
+  <!-- //Pop Up 2-->
 
-    <!-- Pop Up 2-->
-    <div
-      class="modal about-modal fade"
-      id="myModal2"
-      tabindex="-1"
-      role="dialog"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title">Gabriel Rojas</h4>
-          </div>
-          <div class="modal-body">
-            <div class="agileits-w3layouts-info">
-              <img src="images/5.jpg" alt="" />
-              <p>
-                Empezar a hacer trekking para mí fue encontrar algo con lo que
-                he disfrutado mucho. Creo que el hacer actividades al aire libre
-                es un panorama bacán para salir de la rutina y para dar un
-                respiro.
-              </p>
-            </div>
+  <!-- Pop Up 3-->
+  <div class="modal about-modal fade" id="myModal3" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Alonso James</h4>
+        </div>
+        <div class="modal-body">
+          <div class="agileits-w3layouts-info">
+            <img src="images/2.jpg" alt="" />
+            <p>
+              Los senderos son muy entretenidos y el método utilizado, donde
+              nadie queda atrás por lo general y nadie va muy adelante hacen
+              el subir a la cima una comunidad de grupo.
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <!-- //Pop Up 2-->
+  </div>
+  <!-- //Pop Up 3-->
 
-    <!-- Pop Up 3-->
-    <div
-      class="modal about-modal fade"
-      id="myModal3"
-      tabindex="-1"
-      role="dialog"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title">Alonso James</h4>
-          </div>
-          <div class="modal-body">
-            <div class="agileits-w3layouts-info">
-              <img src="images/2.jpg" alt="" />
-              <p>
-                Los senderos son muy entretenidos y el método utilizado, donde
-                nadie queda atrás por lo general y nadie va muy adelante hacen
-                el subir a la cima una comunidad de grupo.
-              </p>
-            </div>
+  <!-- Pop Up 4-->
+  <div class="modal about-modal fade" id="myModal4" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Emilio Cruz</h4>
+        </div>
+        <div class="modal-body">
+          <div class="agileits-w3layouts-info">
+            <img src="images/3.jpg" alt="" />
+            <p>
+              La gestión y planificación de las salidas 2 veces al mes me da
+              tiempo para descansar reponerme para la próxima salida y el
+              valor es mucho más accesible que otros programas más caros y
+              grupos más grandes.
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <!-- //Pop Up 3-->
+  </div>
+  <!-- //Pop Up 4-->
 
-    <!-- Pop Up 4-->
-    <div
-      class="modal about-modal fade"
-      id="myModal4"
-      tabindex="-1"
-      role="dialog"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title">Emilio Cruz</h4>
-          </div>
-          <div class="modal-body">
-            <div class="agileits-w3layouts-info">
-              <img src="images/3.jpg" alt="" />
-              <p>
-                La gestión y planificación de las salidas 2 veces al mes me da
-                tiempo para descansar reponerme para la próxima salida y el
-                valor es mucho más accesible que otros programas más caros y
-                grupos más grandes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Nosotros -->
+  <div class="about" id="about">
+    <div class="col-md-6 w3-agileits-about-left"></div>
+    <div class="col-md-6 agile-about-right">
+      <h2>Nosotros</h2>
+      <h5>
+        Somos un grupo de personas con el afan de generar nuevas experiencias
+        en tu vida
+      </h5>
+      <h5>
+        Amamos tener contacto con la naturaleza, realizar trekking y
+        senderismo por distintos lugares del pais.
+      </h5>
+      <h5>
+        En lo práctico con las salidas puedes conocer gente, acompañado de
+        paisajes silvestres y al estar rodeado de buena onda, generar un buen
+        momento para variar la cansadora rutina.
+      </h5>
+      <h5>
+        Buscamos hacer de esto, más que una forma de vida, transmitir con
+        mucha energía el mundo del trekking, solo tienes que dar el paso y
+        unirte.
+      </h5>
     </div>
-    <!-- //Pop Up 4-->
+    <div class="clearfix"></div>
+  </div>
+  <!-- //Nosotros -->
 
-    <!-- Nosotros -->
-    <div class="about" id="about">
-      <div class="col-md-6 w3-agileits-about-left"></div>
-      <div class="col-md-6 agile-about-right">
-        <h2>Nosotros</h2>
-        <h5>
-          Somos un grupo de personas con el afan de generar nuevas experiencias
-          en tu vida
-        </h5>
-        <h5>
-          Amamos tener contacto con la naturaleza, realizar trekking y
-          senderismo por distintos lugares del pais.
-        </h5>
-        <h5>
-          En lo práctico con las salidas puedes conocer gente, acompañado de
-          paisajes silvestres y al estar rodeado de buena onda, generar un buen
-          momento para variar la cansadora rutina.
-        </h5>
-        <h5>
-          Buscamos hacer de esto, más que una forma de vida, transmitir con
-          mucha energía el mundo del trekking, solo tienes que dar el paso y
-          unirte.
-        </h5>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <!-- //Nosotros -->
-
-    <!-- Servicios -->
-    <div class="services" id="services">
-      <div class="container">
-        <div class="services-top">
-          <div class="col-md-6 services-top-left">
-            <h3>Servicios</h3>
-            <h5>Algunos de Nuestros Servicios</h5>
-            <p>Ofrecemos distintas soluciones.</p>
-          </div>
-          <div class="col-md-6 services-top-right">
-            <div class="services-icons">
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-cogs" aria-hidden="true"></i>
-                  <p>Asesorias</p>
-                </div>
-              </div>
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                  <p>Integración</p>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
+  <!-- Servicios -->
+  <div class="services" id="services">
+    <div class="container">
+      <div class="services-top">
+        <div class="col-md-6 services-top-left">
+          <h3>Servicios</h3>
+          <h5>Algunos de Nuestros Servicios</h5>
+          <p>Ofrecemos distintas soluciones.</p>
         </div>
-        <div class="w3-agile-services-grids">
-          <div class="col-md-6 services-left">
-            <div class="services-icons">
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-comments" aria-hidden="true"></i>
-                  <p>Comunidad</p>
-                </div>
+        <div class="col-md-6 services-top-right">
+          <div class="services-icons">
+            <div class="col-sm-6 services-grid">
+              <div class="services-grid-icon">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                <p>Asesorias</p>
               </div>
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-certificate" aria-hidden="true"></i>
-                  <p>Publicaciones</p>
-                </div>
-              </div>
-              <div class="clearfix"></div>
             </div>
-            <div class="services-icons services-icons-bottom">
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                  <p>Noticias</p>
-                </div>
+            <div class="col-sm-6 services-grid">
+              <div class="services-grid-icon">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                <p>Integración</p>
               </div>
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-road" aria-hidden="true"></i>
-                  <p>Destacados</p>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div class="col-md-6 services-left">
-            <div class="services-icons">
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-bell" aria-hidden="true"></i>
-                  <p>Usuarios</p>
-                </div>
-              </div>
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-asterisk" aria-hidden="true"></i>
-                  <p>Phasellus venenatis</p>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-            <div class="services-icons services-icons-bottom">
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-anchor" aria-hidden="true"></i>
-                  <p>Comunidad</p>
-                </div>
-              </div>
-              <div class="col-sm-6 services-grid">
-                <div class="services-grid-icon">
-                  <i class="fa fa-cog" aria-hidden="true"></i>
-                  <p>Asistencia</p>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-    <!-- //Servicios -->
-
-    <!-- Galeria -->
-    <div class="gallery" id="gallery">
-      <div class="container">
-        <div class="w3ls-heading">
-          <h3>Galleria</h3>
-          <h5>Nuestras fotos</h5>
-        </div>
-      </div>
-      <div
-        class="bs-example bs-example-tabs"
-        role="tabpanel"
-        data-example-id="togglable-tabs"
-      >
-        <ul id="myTab" class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active">
-            <a
-              href="#home-main"
-              id="home-tab"
-              role="tab"
-              data-toggle="tab"
-              aria-controls="home"
-              aria-expanded="true"
-              >Todo</a
-            >
-          </li>
-          <li role="presentation">
-            <a
-              href="#learning"
-              role="tab"
-              id="learning-tab"
-              data-toggle="tab"
-              aria-controls="learning"
-              >Cada día</a
-            >
-          </li>
-          <li role="presentation">
-            <a
-              href="#playing"
-              role="tab"
-              id="playing-tab"
-              data-toggle="tab"
-              aria-controls="playing"
-              >Ocasional</a
-            >
-          </li>
-          <li role="presentation">
-            <a
-              href="#painting"
-              role="tab"
-              id="painting-tab"
-              data-toggle="tab"
-              aria-controls="painting"
-              >Tendencias</a
-            >
-          </li>
-          <li role="presentation">
-            <a
-              href="#school"
-              role="tab"
-              id="school-tab"
-              data-toggle="tab"
-              aria-controls="school"
-              >Ascensos</a
-            >
-          </li>
-        </ul>
-        <div id="myTabContent" class="tab-content">
-          <div
-            role="tabpanel"
-            class="tab-pane fade in active"
-            id="home-main"
-            aria-labelledby="home-tab"
-          >
-            <div class="w3_tab_img">
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/2.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/2.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/3.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/3.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/4.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/4.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/5.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/5.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/6.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/6.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/7.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/7.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/8.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/8.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/9.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/9.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div
-            role="tabpanel"
-            class="tab-pane fade"
-            id="learning"
-            aria-labelledby="learning-tab"
-          >
-            <div class="w3_tab_img">
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/2.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/2.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/3.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/3.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div
-            role="tabpanel"
-            class="tab-pane fade"
-            id="playing"
-            aria-labelledby="playing-tab"
-          >
-            <div class="w3_tab_img">
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/4.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/4.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/5.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/5.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/6.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/6.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/7.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/7.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div
-            role="tabpanel"
-            class="tab-pane fade"
-            id="painting"
-            aria-labelledby="painting-tab"
-          >
-            <div class="w3_tab_img">
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/8.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/8.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/9.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/9.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/2.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/2.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div
-            role="tabpanel"
-            class="tab-pane fade"
-            id="school"
-            aria-labelledby="school-tab"
-          >
-            <div class="w3_tab_img">
-              <div class="col-md-3 w3_tab_img_left">
-                <div class="demo">
-                  <a class="cm-overlay" href="images/3.jpg">
-                    <figure class="imghvr-shutter-in-out-diag-2">
-                      <img src="images/3.jpg" alt=" " class="img-responsive" />
-                    </figure>
-                  </a>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script src="js/jquery.tools.min.js"></script>
-      <script src="js/jquery.mobile.custom.min.js"></script>
-      <script src="js/jquery.cm-overlay.js"></script>
-      <script>
-        $(document).ready(function () {
-          $(".cm-overlay").cmOverlay();
-        });
-      </script>
-    </div>
-    <!-- //Galeria -->
-
-    <!-- Blog -->
-    <div class="blog" id="noticias">
-      <div class="container">
-        <div class="w3ls-heading">
-          <h3>Noticias</h3>
-          <h5>Nuestras Noticias</h5>
-        </div>
-        <div class="agile-blog-grids" id="noticiasContainer">
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-    <!-- //Blog -->
-
-    <!-- Tienda -->
-    <div class="team" id="shop">
-      <div class="container">
-        <div class="w3ls-heading">
-          <h3>Tienda</h3>
-          <h5>Conoce nuestros productos</h5>
-        </div>
-        <div class="agileinfo-team-grids">
-          <div class="col-md-3 wthree-team-grid">
-            <img src="images/10.jpg" alt="" />
-            <div class="wthree-team-grid-info">
-              <h4>Bastones de Trekking Aluminio (2 Unidades)</h4>
-              <p>$19.990</p>
-            </div>
-          </div>
-          <div class="col-md-3 wthree-team-grid">
-            <img src="images/11.jpg" alt="" />
-            <div class="wthree-team-grid-info">
-              <h4>Columbus Lámpara Frontal CF 3</h4>
-              <p>$9.990</p>
-            </div>
-          </div>
-          <div class="col-md-3 wthree-team-grid">
-            <img src="images/12.jpg" alt="" />
-            <div class="wthree-team-grid-info">
-              <h4>Banano Columbus Hydra Hip Belt</h4>
-              <p>$29.990</p>
-            </div>
-          </div>
-          <div class="col-md-3 wthree-team-grid">
-            <img src="images/13.jpg" alt="" />
-            <div class="wthree-team-grid-info">
-              <h4>Columbus Botella Acero Inoxidable AQUA 750</h4>
-              <p>$7.990</p>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-    <!-- //Tienda -->
-
-    <!-- Contacto -->
-    <div class="contact" id="contact">
-      <div class="container">
-        <div class="w3ls-heading">
-          <h3>Contacto</h3>
-          <h5>Envianos tus dudas</h5>
-        </div>
-        <div class="contact-form">
-          <form action="#" method="post">
-            <input type="text" placeholder="Nombre" required="" />
-            <input type="email" placeholder="Email" required="" />
-            <input type="text" placeholder="Telefono" required="" />
-            <textarea placeholder="Mensaje" required=""></textarea>
-            <input type="submit" value="Enviar" />
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- //Contacto -->
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-grids">
-          <div class="col-md-4 footer-grid">
-            <h4>Menu</h4>
-            <div class="col-md-6 footer-grid-left">
-              <ul>
-                <li>
-                  <a href="#home" class="scroll">Home</a>
-                </li>
-                <li>
-                  <a href="#about" class="scroll">Nosotros</a>
-                </li>
-                <li>
-                  <a href="#services" class="scroll">Servicios</a>
-                </li>
-                <li>
-                  <a href="#gallery" class="scroll">Galeria</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-6 footer-grid-left">
-              <ul>
-                <li>
-                  <a href="#blog" class="scroll">Blog</a>
-                </li>
-                <li>
-                  <a href="#shop" class="scroll">Tienda</a>
-                </li>
-                <li>
-                  <a href="#contact" class="scroll">Contacto</a>
-                </li>
-              </ul>
             </div>
             <div class="clearfix"></div>
           </div>
-          <div class="col-md-4 footer-grid">
-            <h4>Contactanos</h4>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="w3-agile-services-grids">
+        <div class="col-md-6 services-left">
+          <div class="services-icons">
+            <div class="col-sm-6 services-grid">
+              <div class="services-grid-icon">
+                <i class="fa fa-comments" aria-hidden="true"></i>
+                <p>Comunidad</p>
+              </div>
+            </div>
+            <div class="col-sm-6 services-grid">
+              <div class="services-grid-icon">
+                <i class="fa fa-certificate" aria-hidden="true"></i>
+                <p>Publicaciones</p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="services-icons services-icons-bottom">
+            <div class="col-sm-6 services-grid">
+              <div class="services-grid-icon">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <p>Noticias</p>
+              </div>
+            </div>
+            <div class="col-sm-6 services-grid">
+              <div class="services-grid-icon">
+                <i class="fa fa-road" aria-hidden="true"></i>
+                <p>Destacados</p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="col-md-6 services-left">
+          <div class="services-icons">
+            <div class="col-sm-6 services-grid">
+              <div class="services-grid-icon">
+                <i class="fa fa-bell" aria-hidden="true"></i>
+                <p>Usuarios</p>
+              </div>
+            </div>
+            <div class="col-sm-6 services-grid">
+              <div class="services-grid-icon">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <p>Asistencia</p>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="services-icons services-icons-bottom">
+            <div class="col-sm-6 services-grid">
+              <div class="services-grid-icon">
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <p>Comunidad</p>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!-- //Servicios -->
+
+  <!-- Galeria -->
+  <div class="gallery" id="gallery">
+    <div class="container">
+      <div class="w3ls-heading">
+        <h3>Galería</h3>
+        <h5>Nuestras fotos</h5>
+      </div>
+    </div>
+    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+
+      <div id="imagesContainer" class="w3_tab_img">
+
+
+      </div>
+
+    </div>
+  </div>
+  <script src="js/jquery.tools.min.js"></script>
+  <script src="js/jquery.mobile.custom.min.js"></script>
+  <script src="js/jquery.cm-overlay.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".cm-overlay").cmOverlay();
+    });
+  </script>
+  </div>
+  <!-- //Galeria -->
+
+  <!-- Blog -->
+  <div class="blog" id="noticias">
+    <div class="container">
+      <div class="w3ls-heading">
+        <h3>Noticias</h3>
+        <h5>Nuestras Noticias</h5>
+      </div>
+      <div class="agile-blog-grids" id="noticiasContainer">
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!-- //Blog -->
+
+  <!-- Tienda -->
+  <div class="team" id="shop">
+    <div class="container">
+      <div class="w3ls-heading">
+        <h3>Tienda</h3>
+        <h5>Conoce nuestros productos</h5>
+      </div>
+      <div class="agileinfo-team-grids">
+        <div class="col-md-3 wthree-team-grid">
+          <img src="images/10.jpg" alt="" />
+          <div class="wthree-team-grid-info">
+            <h4>Bastones de Trekking Aluminio (2 Unidades)</h4>
+            <p>$19.990</p>
+          </div>
+        </div>
+        <div class="col-md-3 wthree-team-grid">
+          <img src="images/11.jpg" alt="" />
+          <div class="wthree-team-grid-info">
+            <h4>Columbus Lámpara Frontal CF 3</h4>
+            <p>$9.990</p>
+          </div>
+        </div>
+        <div class="col-md-3 wthree-team-grid">
+          <img src="images/12.jpg" alt="" />
+          <div class="wthree-team-grid-info">
+            <h4>Banano Columbus Hydra Hip Belt</h4>
+            <p>$29.990</p>
+          </div>
+        </div>
+        <div class="col-md-3 wthree-team-grid">
+          <img src="images/13.jpg" alt="" />
+          <div class="wthree-team-grid-info">
+            <h4>Columbus Botella Acero Inoxidable AQUA 750</h4>
+            <p>$7.990</p>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!-- //Tienda -->
+
+  <!-- Contacto -->
+  <div class="contact" id="contact">
+    <div class="container">
+      <div class="w3ls-heading">
+        <h3>Contacto</h3>
+        <h5>Envianos tus dudas</h5>
+      </div>
+      <div class="contact-form">
+        <form action="#" method="post">
+          <input type="text" placeholder="Nombre" required="" />
+          <input type="email" placeholder="Email" required="" />
+          <input type="text" placeholder="Telefono" required="" />
+          <textarea placeholder="Mensaje" required=""></textarea>
+          <input type="submit" value="Enviar" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- //Contacto -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grids">
+        <div class="col-md-4 footer-grid">
+          <h4>Menu</h4>
+          <div class="col-md-6 footer-grid-left">
             <ul>
               <li>
-                <span>Ubicación : </span>Antonio Varas 666, Providencia, Chile.
+                <a href="#home" class="scroll">Home</a>
               </li>
-              <li><span>Telefono : </span> +56 2 2644 8899</li>
               <li>
-                <span>Email : </span
-                ><a href="mailto:example@email.com">mail@example.com</a>
+                <a href="#about" class="scroll">Nosotros</a>
+              </li>
+              <li>
+                <a href="#services" class="scroll">Servicios</a>
+              </li>
+              <li>
+                <a href="#gallery" class="scroll">Galeria</a>
               </li>
             </ul>
-            <div class="team-social-grids">
-              <ul>
-                <li>
-                  <a href="#"><i class="fa fa-facebook"></i></a
-                  ><a href="#"><i class="fa fa-twitter"></i></a
-                  ><a href="#"><i class="fa fa-rss"></i></a>
-                </li>
-              </ul>
-            </div>
           </div>
-          <div class="col-md-4 footer-grid">
-            <h4>Novedades</h4>
-            <p>Suscribete</p>
-            <form action="#" method="post">
-              <input
-                type="text"
-                placeholder="Suscribirse"
-                name="Subscribe"
-                required=""
-              />
-              <button class="btn1">Ir</button>
-            </form>
+          <div class="col-md-6 footer-grid-left">
+            <ul>
+              <li>
+                <a href="#blog" class="scroll">Blog</a>
+              </li>
+              <li>
+                <a href="#shop" class="scroll">Tienda</a>
+              </li>
+              <li>
+                <a href="#contact" class="scroll">Contacto</a>
+              </li>
+            </ul>
           </div>
           <div class="clearfix"></div>
         </div>
-      </div>
-    </footer>
-    <!-- //Footer -->
-
-    <!-- Copyright -->
-    <div class="copyright">
-      <div class="container">
-        <p>
-          © 2022 AndoTrekkeando. Todos los derechos reservados | Diseñado por
-          Equipo Alumnos Duoc
-        </p>
+        <div class="col-md-4 footer-grid">
+          <h4>Contactanos</h4>
+          <ul>
+            <li>
+              <span>Ubicación : </span>Antonio Varas 666, Providencia, Chile.
+            </li>
+            <li><span>Telefono : </span> +56 2 2644 8899</li>
+            <li>
+              <span>Email : </span><a href="mailto:example@email.com">mail@example.com</a>
+            </li>
+          </ul>
+          <div class="team-social-grids">
+            <ul>
+              <li>
+                <a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a
+                  href="#"><i class="fa fa-rss"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4 footer-grid">
+          <h4>Novedades</h4>
+          <p>Suscribete</p>
+          <form action="#" method="post">
+            <input type="text" placeholder="Suscribirse" name="Subscribe" required="" />
+            <button class="btn1">Ir</button>
+          </form>
+        </div>
+        <div class="clearfix"></div>
       </div>
     </div>
-    <!-- //Copyright -->
+  </footer>
+  <!-- //Footer -->
 
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
-    <!-- Scrolling Icon -->
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $().UItoTop({ easingType: "easeOutQuart" });
-      });
-    </script>
-  </body>
+  <!-- Copyright -->
+  <div class="copyright">
+    <div class="container">
+      <p>
+        © 2022 AndoTrekkeando. Todos los derechos reservados | Diseñado por
+        Equipo Alumnos Duoc
+      </p>
+    </div>
+  </div>
+  <!-- //Copyright -->
+
+  <script type="text/javascript" src="js/move-top.js"></script>
+  <script type="text/javascript" src="js/easing.js"></script>
+  <!-- Scrolling Icon -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $().UItoTop({ easingType: "easeOutQuart" });
+    });
+  </script>
+</body>
+
 </html>
