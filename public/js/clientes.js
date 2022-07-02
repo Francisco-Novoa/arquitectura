@@ -12,67 +12,81 @@ window.onload = async () => {
         mensaje.response.data.error);
     };
   
-    const crearCliente = async () => {
-      const password = document.getElementById(`crear-cliente-input`);
-      const rut = document.getElementById(`crear-cliente-input`);
-      const correo = document.getElementById(`crear-cliente-input`);
-      const fecha_nacimiento = document.getElementById(`crear-cliente-input`);
-      const genero = document.getElementById(`crear-cliente-input`);
-      const fono = document.getElementById(`crear-cliente-input`);
-      const direccion = document.getElementById(`crear-cliente-input`);
-      const fono_emergencia = document.getElementById(`crear-cliente-input`);
-      const nombre_emergencia = document.getElementById(`crear-cliente-input`);
-      const estado = document.getElementById(`crear-cliente-input`);
-      const derivar_a = document.getElementById(`crear-cliente-input`);
+    // const crearCliente = async () => {
+      const password = document.getElementById(`crear-cliente-password`);
+      const rut = document.getElementById(`crear-cliente-rut`);
+      const correo = document.getElementById(`crear-cliente-correo`);
+      const fecha_nacimiento = document.getElementById(`crear-cliente-fecha_nacimiento`);
+      const genero = document.getElementById(`crear-cliente-genero`);
+      const fono = document.getElementById(`crear-cliente-fono`);
+      const direccion = document.getElementById(`crear-cliente-direccion`);
+      const fono_emergencia = document.getElementById(`crear-cliente-fono_emergencia`);
+      const nombre_emergencia = document.getElementById(`crear-cliente-nombre_emergencia`);
+      const estado = document.getElementById(`crear-cliente-estado`);
+      const derivar_a = document.getElementById(`crear-cliente-derivar_a`);
   
-      try {
-        const result = await axios.post("api/users", {
-            password: input.value,
-            rut: input.value,
-            correo: input.value,
-            fecha_nacimiento: input.value,
-            genero: input.value,
-            fono: input.value,
-            direccion: input.value,
-            fono_emergencia: input.value,
-            nombre_emergencia: input.value,
-            estado: input.value,
-            derivar_a: input.value,
-        });
-        password.value = "";
-        rut.value = "";
-        correo.value = "";
-        fecha_nacimiento.value = "";
-        genero.value = "";
-        fono.value = "";
-        direccion.value = "";
-        fono_emergencia.value = "";
-        nombre_emergencia.value = "";
-        estado.value = "";
-        derivar_a.value = "";
-        loadClientes();
-      } catch (error) {
-        alert(error);
-      }
-    };
+    //   try {
+    //     const result = await axios.post("api/users", {
+            // nombre: nombre.value,
+            // password: password.value,
+            // rut: rut.value,
+            // correo: correo.value,
+            // fecha_nacimiento: fecha_nacimiento.value,
+            // genero: genero.value,
+            // fono: fono.value,
+            // direccion: direccion.value,
+            // fono_emergencia: fono_emergencia.value,
+            // nombre_emergencia: nombre_emergencia.value,
+            // estado: estado.value,
+            // derivar_a: derivar_a.value,
+    //     });
+    //     password.value = "";
+    //     rut.value = "";
+    //     correo.value = "";
+    //     fecha_nacimiento.value = "";
+    //     genero.value = "";
+    //     fono.value = "";
+    //     direccion.value = "";
+    //     fono_emergencia.value = "";
+    //     nombre_emergencia.value = "";
+    //     estado.value = "";
+    //     derivar_a.value = "";
+    //     loadClientes();
+    //   } catch (error) {
+    //     alert(error);
+    //   }
+    // };
   
-    bottonCrearCliente.addEventListener("click", crearCliente);
+    // bottonCrearCliente.addEventListener("click", crearCliente);
   
     const editarCliente = id => async () => {
-      const input = document.getElementById(`input-cliente-edit-${id}`);
+      const nombre = document.getElementById(`input-cliente-edit-${id}`);
+      const password = document.getElementById(`crear-cliente-password`);
+      const rut = document.getElementById(`crear-cliente-rut`);
+      const correo = document.getElementById(`crear-cliente-correo`);
+      const fecha_nacimiento = document.getElementById(`crear-cliente-fecha_nacimiento`);
+      const genero = document.getElementById(`crear-cliente-genero`);
+      const fono = document.getElementById(`crear-cliente-fono`);
+      const direccion = document.getElementById(`crear-cliente-direccion`);
+      const fono_emergencia = document.getElementById(`crear-cliente-fono_emergencia`);
+      const nombre_emergencia = document.getElementById(`crear-cliente-nombre_emergencia`);
+      const estado = document.getElementById(`crear-cliente-estado`);
+      const derivar_a = document.getElementById(`crear-cliente-derivar_a`);
+      
       try {
         const result = await axios.put(`/api/users/${id}`, {
-          password: input.value,
-          rut: input.value,
-          correo: input.value,
-          fecha_nacimiento: input.value,
-          genero: input.value,
-          fono: input.value,
-          direccion: input.value,
-          fono_emergencia: input.value,
-          nombre_emergencia: input.value,
-          estado: input.value,
-          derivar_a: input.value,
+            nombre: nombre.value,
+            password: password.value,
+            rut: rut.value,
+            correo: correo.value,
+            fecha_nacimiento: fecha_nacimiento.value,
+            genero: genero.value,
+            fono: fono.value,
+            direccion: direccion.value,
+            fono_emergencia: fono_emergencia.value,
+            nombre_emergencia: nombre_emergencia.value,
+            estado: estado.value,
+            derivar_a: derivar_a.value,
 
         });
         loadClientes();
