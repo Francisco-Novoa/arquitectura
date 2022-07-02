@@ -14,7 +14,6 @@ window.onload = async () => {
 
   const crearBanco = async () => {
     const nombre = document.getElementById(`crear-banco-input`);
-
     try {
       const result = await axios.post("api/banco", {
         nombre: nombre.value,
@@ -58,17 +57,16 @@ window.onload = async () => {
         <td>${banco.id}</td>
         <td>${banco.nombre}</td>
         <td>
-        <div class="ordenado">
-        <label class="error" id="message-banco-${banco.id}"> 
-        </label >
-        </div>
-            <div class="ordenado">
-                <button id="button-send-banco-edit-${banco.id}" >Editar</button>
-                <input type="text" id="input-banco-edit-${banco.id}">
-            </div>
-        </td>
+          <div class="ordenado">
+              <label class="error" id="message-banco-${banco.id}"></label >
+          </div>
+              <div class="ordenado">
+                  <button id="button-send-banco-edit-${banco.id}" >Editar</button>
+                  <input type="text" id="input-banco-edit-${banco.id}">
+              </div>
+          </td>
         <td>
-        <button id="button-send-banco-delete-${banco.id}" >Eliminar</button>
+          <button id="button-send-banco-delete-${banco.id}" >Eliminar</button>
         </td>`;
       tablaBancos.appendChild(tableRow);
       document
