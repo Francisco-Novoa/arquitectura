@@ -36,4 +36,4 @@ MainRouter.use("/psalud", problema_saludRouter);
 MainRouter.use("/rutas", rutasRouter);
 MainRouter.use("/imagenes", imagenesRouter);
 MainRouter.use("/noticias", noticiasRouter);
-MainRouter.use("/weather", weatherRouter);
+// MainRouter.use("/weather", weatherRouter);

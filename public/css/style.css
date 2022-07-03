@@ -631,6 +631,7 @@ footer {
 /*-- gallery --*/
 .gallery {
   background: #e5eff1;
+  margin-top: 16px;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
