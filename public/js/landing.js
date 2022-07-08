@@ -71,15 +71,54 @@ window.onload = async () => {
     }
   };
 
-  const weather = await loadWeather();
-
+  //const weather = await loadWeather();
+// login
   const loginCorreo = document.getElementById("emailInput")
   const loginPassword = document.getElementById("passwordInput")
   const loginButton = document.getElementById("formButton")
 
-  loginButton.addEventListener("click", (event) => {
-      console.log("wena")
+  loginButton.addEventListener("click", async (event) => {
+    try {
+      const user = await axios.post("/api/login", {
+        correo: loginCorreo.value,
+        password: loginPassword.value
+      } )
+      console.log(user)
+      loginCorreo.value = ''
+      loginPassword.value = ''
+      window.location.href = '/perfil-usuario.html'
+    } catch (error) {
+      console.error(error);
+    }
   })
+
+  const registerCorreo = document.getElementById("emailRegistro")
+  const registerPassword  = document.getElementById("passwordRegistro")
+  const registerRut = document.getElementById("rutRegistro")
+  const registerNombre = document.getElementById("nombreRegistro")
+  const registerFechaNacimiento = document.getElementById("fechaNacimientoRegistro")
+  const registerFono = document.getElementById("fonoRegistro")
+  const registerDireccion = document.getElementById("direccionRegistro")
+  const registerGenero = document.getElementById("generoRegistro")
+
+  registerButton.addEventListener("click", async (event) => {
+    try {
+      const user = await axios.post("/api/users", {
+        correo: registerCorreo.value,
+        password: registerPassword.value,
+        rut: registerRut.value,
+        nombre: registerNombre.value ,
+        fecha_nacimiento: new Date(Date.now()).toISOString(),
+        fono: registerFono.value,
+        direccion: registerDireccion.value,
+        genero: registerGenero.value
+      } )
+      console.log(user)
+    } catch (error) {
+      console.error(error);
+    }
+  })
+ 
 };
 
 

@@ -82,10 +82,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <li class="active">
                     <a href="index.html"><span>Home</span></a>
                   </li>
-                  <li>
-                    <a href="#about" class="scroll"><span>Nosotros</span></a>
-                  </li>
-              
+                  
                   <li>
                     <a href="#gallery" class="scroll"><span>Galeria</span></a>
                   </li>
@@ -100,6 +97,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   </li>
                   <li>
                     <a href="#log-in" class="scroll" data-toggle="modal" data-target="#login"><span>Ingresar</span></a>
+                  </li>
+                  <li>
+                    <a href="#register" class="scroll" data-toggle="modal" data-target="#register"><span>Registrate</span></a>
                   </li>
                 </ul>
               </nav>
@@ -662,6 +662,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </div>
     </div>
 
+    <!-- Login -->
+
     <div
       class="modal about-modal fade"
       id="login"
@@ -692,8 +694,67 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
       </div>
     </div>
+    <!-- Register -->
+    <div
+      class="modal about-modal fade"
+      id="register"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" id="registerBox">
+            <div>
+              <h1 id="formHeader">Registrate</h1>
+            </div>
+            <div id="registerForm">
+              <div class="input">
+                <label for="emailRegistro"> Correo:
+                </label>
+                <input type="text" id="emailRegistro">
+              </div>
+              <div class="input">
+                <label for="passwordRegistro"> Contraseña: 
+                </label>
+                <input type="password" id="passwordRegistro">
+              </div>
+              <div class="input">
+                <label for="rutRegistro"> Rut: 
+                </label>
+                <input type="text" id="rutRegistro">
+              </div>
+              <div class="input">
+                <label for="nombreRegistro" > Nombre: 
+                </label>
+                <input type="text" id="nombreRegistro">
+              </div>
+              <div class="input">
+                <label for="fechaNacimientoRegistro" > Fecha nacimiento: 
+                </label>
+                <input type="text" id="fechaNacimientoRegistro">
+              </div>
+              <div class="input">
+                <label for="fonoRegistro" > Fono: 
+                </label>
+                <input type="text" id="fonoRegistro">
+              </div>
+              <div class="input">
+                <label for="direccionRegistro" > Direccion: 
+                </label>
+                <input type="text" id="direccionRegistro">
+              </div>
+              <div class="input">
+                <label for="generoRegistro" > Genero: 
+                </label>
+                <input type="text" id="generoRegistro">
+              </div>
+              <button id="registerButton" >Registrarse</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- //Copyright -->
-
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
     <!-- Scrolling Icon -->

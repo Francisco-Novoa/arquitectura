@@ -40,7 +40,6 @@
 }
 #labelPass{
   margin-right: 2px;
-  
 }
 
 #formHeader{
@@ -49,6 +48,17 @@
 }
 
 #formButton{
-  
   max-width: 300px;
+}
+
+.input{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+#registerBox {
+  padding-left: 20%;
+  padding-right: 20%;
 }

@@ -34,18 +34,18 @@ usersRouter.post("/", async (req, res) => {
   if (!fono) return res.status(400).send({ error: "Fono no debe estar vacio" });
   if (!direccion)
     return res.status(400).send({ error: "Direccion no debe estar vacia" });
-  if (!fono_emergencia)
-    return res
-      .status(400)
-      .send({ error: "Debes tener un numero de emergencias" });
-  if (!nombre_emergencia)
-    return res
-      .status(400)
-      .send({ error: "Debes tener un contacto de emergencias" });
-  if (!derivar_a)
-    return res
-      .status(400)
-      .send({ error: "Necesitamos un centro medico de derivacion" });
+  // if (!fono_emergencia)
+  //   return res
+  //     .status(400)
+  //     .send({ error: "Debes tener un numero de emergencias" });
+  // if (!nombre_emergencia)
+  //   return res
+  //     .status(400)
+  //     .send({ error: "Debes tener un contacto de emergencias" });
+  // if (!derivar_a)
+  //   return res
+  //     .status(400)
+  //     .send({ error: "Necesitamos un centro medico de derivacion" });
   const saltRounds = 10;
   const passwordHash = await bcrypt.hash(password, saltRounds);
   const user = await User.create(
