@@ -8,3 +8,47 @@
 .error {
   color: red;
 }
+
+#loginBox{
+  background-color: pink;
+  display: flex; 
+  flex-direction: column;
+}
+
+#loginForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#loginCorreo{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+#loginPass{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+#labelCorreo{
+  margin-right: 35px;
+}
+#labelPass{
+  margin-right: 2px;
+  
+}
+
+#formHeader{
+  display: flex;
+  justify-content: center;
+}
+
+#formButton{
+  
+  max-width: 300px;
+}

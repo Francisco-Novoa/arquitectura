@@ -13,6 +13,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
     </script>
     <script src="js/landing.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
     <!-- bootstrap-css -->
     <link
       href="css/bootstrap.css"
@@ -84,22 +85,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <li>
                     <a href="#about" class="scroll"><span>Nosotros</span></a>
                   </li>
-                  <li>
-                    <a href="#services" class="scroll"
-                      ><span>Servicios</span></a
-                    >
-                  </li>
+              
                   <li>
                     <a href="#gallery" class="scroll"><span>Galeria</span></a>
                   </li>
                   <li>
-                    <a href="#blog" class="scroll"><span>Blog</span></a>
+                    <a href="#blog" class="scroll"><span>Noticias</span></a>
                   </li>
                   <li>
                     <a href="#shop" class="scroll"><span>Tienda</span></a>
                   </li>
                   <li>
                     <a href="#contact" class="scroll"><span>Contacto</span></a>
+                  </li>
+                  <li>
+                    <a href="#log-in" class="scroll" data-toggle="modal" data-target="#login"><span>Ingresar</span></a>
                   </li>
                 </ul>
               </nav>
@@ -659,6 +659,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           © 2022 AndoTrekkeando. Todos los derechos reservados | Diseñado por
           Equipo Alumnos Duoc
         </p>
+      </div>
+    </div>
+
+    <div
+      class="modal about-modal fade"
+      id="login"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          
+          <div class="modal-body" id="loginBox">
+            <div>
+              <h1 id="formHeader" >Ingresar</h1>
+            </div>
+            <div id="loginForm">
+              <div id="loginCorreo">
+                <label for="correo" id="labelCorreo"> Correo:
+                </label>
+                <input type="email" id="emailInput">
+              </div>
+              <div id="loginPass" >
+                <label for="password" id="labelPass"> Contraseña: 
+                </label>
+                <input type="password" id="passwordInput">
+              </div>
+              <button id="formButton" >Ingresar</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- //Copyright -->

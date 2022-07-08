@@ -72,4 +72,14 @@ window.onload = async () => {
   };
 
   const weather = await loadWeather();
+
+  const loginCorreo = document.getElementById("emailInput")
+  const loginPassword = document.getElementById("passwordInput")
+  const loginButton = document.getElementById("formButton")
+
+  loginButton.addEventListener("click", (event) => {
+      console.log("wena")
+  })
 };
+
+
