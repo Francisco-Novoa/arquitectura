@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import express from "express";
 import { SECRET } from "../../utils/config.js";
-import { User } from "../../models/index.js";
+import { User, Perfil } from "../../models/index.js";
 import { ValidaRut } from "../../utils/rutValidator.js";
 
 export const usersRouter = express.Router();
@@ -21,6 +21,7 @@ usersRouter.post("/", async (req, res) => {
     nombre_emergencia,
     estado,
     derivar_a,
+    perfil,
   } = req.body;
   if (!password || !correo)
     return res.status(400).send({ error: "Password o correo vacias" });
@@ -34,6 +35,7 @@ usersRouter.post("/", async (req, res) => {
   if (!fono) return res.status(400).send({ error: "Fono no debe estar vacio" });
   if (!direccion)
     return res.status(400).send({ error: "Direccion no debe estar vacia" });
+
   // if (!fono_emergencia)
   //   return res
   //     .status(400)
@@ -62,6 +64,7 @@ usersRouter.post("/", async (req, res) => {
       nombre_emergencia,
       estado,
       derivar_a,
+      perfileid: 2,
     },
     { raw: true }
   );
@@ -113,6 +116,7 @@ usersRouter.put("/:id", async (req, res) => {
     nombre_emergencia,
     estado,
     derivar_a,
+    perfil,
   } = req.body;
   const id = req.params.id;
   if (!(await User.findByPk(id)))
@@ -125,18 +129,12 @@ usersRouter.put("/:id", async (req, res) => {
   if (!fono) return res.status(400).send({ error: "Fono no debe estar vacio" });
   if (!direccion)
     return res.status(400).send({ error: "Direccion no debe estar vacia" });
-  if (!fono_emergencia)
-    return res
-      .status(400)
-      .send({ error: "Debes tener un numero de emergencias" });
-  if (!nombre_emergencia)
-    return res
-      .status(400)
-      .send({ error: "Debes tener un contacto de emergencias" });
-  if (!derivar_a)
-    return res
-      .status(400)
-      .send({ error: "Necesitamos un centro medico de derivacion" });
+
+  const perf = await Perfil.findByPk(perfil, {
+    raw: true,
+  });
+  console.log(perf);
+  if (!perf) return res.status(404).send({ message: "perfil no encontrado" });
   const user = await User.update(
     {
       correo,
@@ -150,6 +148,7 @@ usersRouter.put("/:id", async (req, res) => {
       nombre_emergencia,
       estado,
       derivar_a,
+      perfileId: perfil,
     },
     {
       where: {
@@ -197,13 +196,12 @@ usersRouter.get("/:id", async (req, res) => {
 });
 
 usersRouter.get("/", async (req, res) => {
-  const user = await User.findAll({raw:true});
-  user.map( (usuario)=> {
+  const user = await User.findAll({ raw: true, include: Perfil });
+  user.map(usuario => {
     delete usuario.passwordHash;
-  }) 
+  });
   res.status(200).json({
     message: "usuario obtenido exitosamente",
     data: { user },
   });
 });
-

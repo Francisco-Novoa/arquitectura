@@ -4,7 +4,7 @@ import sequelize from "../database/database.js";
 export const Perfil = sequelize.define(
   "perfiles",
   {
-    id_perfil: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,

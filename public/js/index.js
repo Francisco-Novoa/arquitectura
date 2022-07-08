@@ -1,9 +1,6 @@
 window.onload = async () => {
-  //   const login = await axios.post("/api/login", {
-  //     correo: "pancho",
-  //     password: "1234567890",
-  //   });
-
+  const token = window.localStorage.getItem("token");
+  const userId = window.localStorage.getItem("id");
   const tablaBancos = document.getElementById("tabla-bancos");
   const bottonCrearBanco = document.getElementById(`crear-banco-button`);
 
@@ -15,9 +12,17 @@ window.onload = async () => {
   const crearBanco = async () => {
     const nombre = document.getElementById(`crear-banco-input`);
     try {
-      const result = await axios.post("api/banco", {
-        nombre: nombre.value,
-      });
+      const result = await axios.post(
+        "api/banco",
+        {
+          nombre: nombre.value,
+        },
+        {
+          headers: {
+            Authorization: `bearer ${token}`,
+          },
+        }
+      );
       nombre.value = "";
       loadBancos();
     } catch (error) {
@@ -30,9 +35,17 @@ window.onload = async () => {
   const editarBanco = id => async () => {
     const input = document.getElementById(`input-banco-edit-${id}`);
     try {
-      const result = await axios.put(`/api/banco/${id}`, {
-        nombre: input.value,
-      });
+      const result = await axios.put(
+        `/api/banco/${id}`,
+        {
+          nombre: input.value,
+        },
+        {
+          headers: {
+            Authorization: `bearer ${token}`,
+          },
+        }
+      );
       loadBancos();
     } catch (error) {
       llenarMensaje(id)(error);
@@ -41,7 +54,11 @@ window.onload = async () => {
 
   const eliminarBanco = id => async () => {
     try {
-      const result = await axios.delete(`/api/banco/${id}`);
+      const result = await axios.delete(`/api/banco/${id}`, {
+        headers: {
+          Authorization: `bearer ${token}`,
+        },
+      });
       loadBancos();
     } catch (error) {
       llenarMensaje(id)(error.data.message);
@@ -49,7 +66,11 @@ window.onload = async () => {
   };
 
   const loadBancos = async () => {
-    const bancos = await axios.get("/api/banco");
+    const bancos = await axios.get("/api/banco", {
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    });
     tablaBancos.innerHTML = "";
     bancos.data.data.banco.map(banco => {
       const tableRow = document.createElement("tr");

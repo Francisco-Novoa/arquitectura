@@ -1,50 +1,10 @@
 window.onload = async () => {
-  //   const login = await axios.post("/api/login", {
-  //     correo: "pancho",
-  //     password: "1234567890",
-  //   });
-
   const bottonEditarCliente = document.getElementById(`cliente-update-button`);
 
   const llenarMensaje = id => async mensaje => {
     const label = (document.getElementById(id).innerHTML =
       mensaje.response.data.error);
   };
-
-  // const crearCliente = async () => {
-  //   try {
-  //     const result = await axios.post("api/users", {
-  // nombre: nombre.value,
-  // password: password.value,
-  // rut: rut.value,
-  // correo: correo.value,
-  // fecha_nacimiento: fecha_nacimiento.value,
-  // genero: genero.value,
-  // fono: fono.value,
-  // direccion: direccion.value,
-  // fono_emergencia: fono_emergencia.value,
-  // nombre_emergencia: nombre_emergencia.value,
-  // estado: estado.value,
-  // derivar_a: derivar_a.value,
-  //     });
-  //     password.value = "";
-  //     rut.value = "";
-  //     correo.value = "";
-  //     fecha_nacimiento.value = "";
-  //     genero.value = "";
-  //     fono.value = "";
-  //     direccion.value = "";
-  //     fono_emergencia.value = "";
-  //     nombre_emergencia.value = "";
-  //     estado.value = "";
-  //     derivar_a.value = "";
-  //     loadClientes();
-  //   } catch (error) {
-  //     alert(error);
-  //   }
-  // };
-
-  // bottonCrearCliente.addEventListener("click", crearCliente);
 
   const id = document.getElementById(`input-id`);
   const nombre = document.getElementById(`input-nombre`);
@@ -58,6 +18,7 @@ window.onload = async () => {
   const nombre_emergencia = document.getElementById(`input-nombre_emergencia`);
   const estado = document.getElementById(`input-estado`);
   const derivar_a = document.getElementById(`input-derivar_a`);
+  const perfilesSelect = document.getElementById("select-perfil");
 
   const editarCliente = async () => {
     const msgFunction = llenarMensaje("cliente-update-button-label");
@@ -74,6 +35,7 @@ window.onload = async () => {
         nombre_emergencia: nombre_emergencia.value,
         estado: estado.value,
         derivar_a: derivar_a.value,
+        perfil: perfilesSelect.value,
       });
       loadClientes();
     } catch (error) {
@@ -89,7 +51,7 @@ window.onload = async () => {
       const result = await axios.delete(`/api/users/${id}`);
       loadClientes();
     } catch (error) {
-        llenarMensaje(id)(error.data.message);
+      llenarMensaje(id)(error.data.message);
     }
   };
 
@@ -109,10 +71,12 @@ window.onload = async () => {
     nombre_emergencia.value = user.nombre_emergencia;
     estado.value = user.estado;
     derivar_a.value = user.derivar_a;
+    perfilesSelect.value = user.perfileId;
   };
 
   const loadClientes = async () => {
     const clientes = await axios.get("/api/users");
+    console.log(clientes);
     tablaClientes.innerHTML = "";
     clientes.data.data.user.map(cliente => {
       const tableRow = document.createElement("tr");
@@ -130,6 +94,7 @@ window.onload = async () => {
           <td>${cliente.derivar_a}</td>
           <td>${cliente.createdAt}</td>
           <td>${cliente.updatedAt}</td>
+          <td>${cliente["perfile.tipo"]}</td>
           <td>
             <button id="button-load-cliente-${cliente.rut}" >Cargar</button>
           </td>
@@ -143,4 +108,20 @@ window.onload = async () => {
   };
 
   loadClientes();
+
+  const getPerfiles = async () => {
+    const {
+      data: {
+        data: { perfiles },
+      },
+    } = await axios.get("/api/perfil");
+    perfiles.map(({ id, tipo }) => {
+      const opcion = document.createElement("option");
+      opcion.setAttribute("value", id);
+      opcion.innerHTML = `${tipo}`;
+      perfilesSelect.appendChild(opcion);
+    });
+  };
+
+  getPerfiles();
 };

@@ -42,8 +42,8 @@ window.onload = async () => {
       box.innerHTML = `
                 <div class="agile-blog-grid-img">
                     <a href="#" data-toggle="modal" data-target="#myModal2"><img src="${
-                      imagen[0].url
-                    }" alt="${imagen[0].alt}" /></a>
+                      imagen !== null ? imagen[0]?.url : ""
+                    }" alt="${imagen !== null ? imagen[0]?.alt : ""}" /></a>
                     <a href="#" data-toggle="modal" data-target="#myModal2">${titulo}</a>
                     <p>Publicado por <a href="#">${username}</a> &nbsp;&nbsp;${new Intl.DateTimeFormat().format(
         new Date(fecha)
@@ -72,53 +72,61 @@ window.onload = async () => {
   };
 
   //const weather = await loadWeather();
-// login
-  const loginCorreo = document.getElementById("emailInput")
-  const loginPassword = document.getElementById("passwordInput")
-  const loginButton = document.getElementById("formButton")
+  // login
+  const loginCorreo = document.getElementById("emailInput");
+  const loginPassword = document.getElementById("passwordInput");
+  const loginButton = document.getElementById("formButton");
 
-  loginButton.addEventListener("click", async (event) => {
+  loginButton.addEventListener("click", async event => {
     try {
-      const user = await axios.post("/api/login", {
+      const {
+        data: { token, id, perfil },
+      } = await axios.post("/api/login", {
         correo: loginCorreo.value,
-        password: loginPassword.value
-      } )
-      console.log(user)
-      loginCorreo.value = ''
-      loginPassword.value = ''
-      window.location.href = '/perfil-usuario.html'
+        password: loginPassword.value,
+      });
+      window.localStorage.setItem("token", token);
+      window.localStorage.setItem("id", id);
+      const storageTK = window.localStorage.getItem("token");
+      const storageID = window.localStorage.getItem("id");
+      console.log(storageTK, storageID);
+      loginPassword.value = "";
+      loginCorreo.value = "";
+      if (perfil === "administrador") {
+        return (window.location.href = "/admin.html");
+      }
+      return (window.location.href = "/perfil-usuario.html");
     } catch (error) {
       console.error(error);
     }
-  })
+  });
 
-  const registerCorreo = document.getElementById("emailRegistro")
-  const registerPassword  = document.getElementById("passwordRegistro")
-  const registerRut = document.getElementById("rutRegistro")
-  const registerNombre = document.getElementById("nombreRegistro")
-  const registerFechaNacimiento = document.getElementById("fechaNacimientoRegistro")
-  const registerFono = document.getElementById("fonoRegistro")
-  const registerDireccion = document.getElementById("direccionRegistro")
-  const registerGenero = document.getElementById("generoRegistro")
+  const registerCorreo = document.getElementById("emailRegistro");
+  const registerPassword = document.getElementById("passwordRegistro");
+  const registerRut = document.getElementById("rutRegistro");
+  const registerNombre = document.getElementById("nombreRegistro");
+  const registerFechaNacimiento = document.getElementById(
+    "fechaNacimientoRegistro"
+  );
+  const registerFono = document.getElementById("fonoRegistro");
+  const registerDireccion = document.getElementById("direccionRegistro");
+  const registerGenero = document.getElementById("generoRegistro");
 
-  registerButton.addEventListener("click", async (event) => {
+  registerButton.addEventListener("click", async event => {
     try {
       const user = await axios.post("/api/users", {
         correo: registerCorreo.value,
         password: registerPassword.value,
         rut: registerRut.value,
-        nombre: registerNombre.value ,
+        nombre: registerNombre.value,
         fecha_nacimiento: new Date(Date.now()).toISOString(),
         fono: registerFono.value,
         direccion: registerDireccion.value,
-        genero: registerGenero.value
-      } )
-      console.log(user)
+        genero: registerGenero.value,
+      });
+      console.log(user);
     } catch (error) {
       console.error(error);
     }
-  })
- 
+  });
 };
-
-

@@ -9,14 +9,14 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
       integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./js/clientes.js"></script>
+    <script src="./js/index.js"></script>
   </head>
   <body>
     <div class="container">
@@ -27,12 +27,13 @@
             <a href="./index.html"><h2>Go to landing</h2></a>
           </div>
         </div>
+
         <div class="sidebar">
-          <a href="/admin.html">
+          <a href="/admin.html" class="">
             <span class="material-symbols-outlined"> dashboard </span>
             <h3>Dashboard</h3>
           </a>
-          <a href="/clientes.html">
+          <a href="/admin.html">
             <span class="material-symbols-outlined"> person </span>
             <h3>Clientes</h3>
           </a>
@@ -52,19 +53,20 @@
             <span class="material-symbols-outlined"> newspaper </span>
             <h3>Noticias</h3>
           </a>
-          <a href="/bancos.html">
-            <span class="material-symbols-outlined"> attach_money </span>
-            <h3>Bancos</h3>
-          </a>
-          <a href="/pagos.html" class="active">
+          <a href="/pagos.html">
             <span class="material-symbols-outlined"> attach_money </span>
             <h3>Pagos</h3>
+          </a>
+          <a href="/bancos.html" class="active">
+            <span class="material-symbols-outlined"> attach_money </span>
+            <h3>Bancos</h3>
           </a>
           <a href="/mensajeria.html">
             <span class="material-symbols-outlined"> inbox </span>
             <h3>Mensajeria</h3>
             <span class="message-count">26</span>
           </a>
+
           <a href="">
             <span class="material-symbols-outlined"> logout </span>
             <h3>Salir</h3>
@@ -72,30 +74,27 @@
         </div>
       </aside>
       <main>
-        <h1>Pagos</h1>
-        <div class="pagos">
+        <h1>Noticias</h1>
+        <div class="cliente">
           <table>
             <thead>
               <tr>
-                <th>nro cuenta</th>
-                <th>titular</th>
-                <th>tipo cuenta</th>
-                <th>banco</th>
-                <th>monto</th>
-                <th>Recibido(hora/fecha)</th>
-                <th>Accion</th>
+                <th>id</th>
+                <th>nombre</th>
+                <th>editar</th>
+                <th>eliminar</th>
               </tr>
             </thead>
-            <tbody id="tabla-clientes"></tbody>
+            <tbody id="tabla-bancos"></tbody>
           </table>
-
           <div>
-            <label for="cliente-update-button-label"></label>
-            <button id="cliente-update-button">Aceptar</button>
-          </div>
-          <div>
-            <label for="cliente-delete-button-label"></label>
-            <button id="cliente-delete-button">Reembolsar</button>
+            <div class="">
+              <label for="crear-banco.input">Añadir Banco</label>
+              <div class="">
+                <input type="text" id="crear-banco-input" />
+                <button id="crear-banco-button">Añadir Banco</button>
+              </div>
+            </div>
           </div>
         </div>
       </main>

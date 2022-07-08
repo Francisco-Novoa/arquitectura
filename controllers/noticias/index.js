@@ -37,10 +37,6 @@ noticiasRouter.post("/", async (req, res) => {
     return res
       .status(400)
       .send({ message: "no puede haber una noticia sin un cuerpo" });
-  if (!prioridad)
-    return res
-      .status(400)
-      .send({ message: "las noticias necesitan una prioridad" });
   const noticia = await Noticia.create({
     titulo,
     encabezado,
@@ -53,7 +49,6 @@ noticiasRouter.post("/", async (req, res) => {
     .json({ message: "Noticia creada exitosamente", data: { noticia } });
 });
 
-//crea ruta que obtiene todos los perfiles
 noticiasRouter.get("/", async (req, res) => {
   const [results, metadata] = await sequelize.query(
     `with imagenes as (
@@ -65,17 +60,14 @@ noticiasRouter.get("/", async (req, res) => {
             u.nombre as username, i.imagen 
           from noticias n 
           join usuarios u on n."usuarioId"  = u.id
-          join imagenes i on n.id = i."noticiaId"`
+          left join imagenes i on n.id = i."noticiaId"`
   );
-  return res
-    .status(200)
-    .json({
-      message: "Noticias obtenidas exitosamente",
-      data: { noticias: results },
-    });
+  return res.status(200).json({
+    message: "Noticias obtenidas exitosamente",
+    data: { noticias: results },
+  });
 });
 
-//crea ruta que obtiene un unico perfil
 noticiasRouter.get("/:id", async (req, res) => {
   const noticias = await Noticia.findByPk(req.params.id, { include: Imagen });
   if (!noticias)
@@ -111,10 +103,6 @@ noticiasRouter.put("/:id", async (req, res) => {
     return res
       .status(400)
       .send({ message: "no puede haber una noticia sin un cuerpo" });
-  if (!prioridad)
-    return res
-      .status(400)
-      .send({ message: "las noticias necesitan una prioridad" });
   const noticias = await Noticia.update(
     { titulo, encabezado, cuerpo, prioridad, usuarioId, fecha },
     {

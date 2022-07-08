@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DASHBOARD</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+      integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/clientes.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <span class="material-symbols-outlined"> supervisor_account </span>
+            <a href="./index.html"><h2>Go to landing</h2></a>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <a href="/admin.html" class="">
+            <span class="material-symbols-outlined"> dashboard </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="/admin.html">
+            <span class="material-symbols-outlined"> person </span>
+            <h3>Clientes</h3>
+          </a>
+          <a href="/rutas.html">
+            <span class="material-symbols-outlined"> nordic_walking </span>
+            <h3>Rutas</h3>
+          </a>
+          <a href="/actividades.html">
+            <span class="material-symbols-outlined"> nordic_walking </span>
+            <h3>Actividades</h3>
+          </a>
+          <a href="/imagenes.html">
+            <span class="material-symbols-outlined"> imagesmode </span>
+            <h3>Imagenes</h3>
+          </a>
+          <a href="/noticias.html">
+            <span class="material-symbols-outlined"> newspaper </span>
+            <h3>Noticias</h3>
+          </a>
+          <a href="/bancos.html">
+            <span class="material-symbols-outlined"> attach_money </span>
+            <h3>Bancos</h3>
+          </a>
+          <a href="/pagos.html">
+            <span class="material-symbols-outlined"> attach_money </span>
+            <h3>Pagos</h3>
+          </a>
+          <a href="/mensajeria.html" class="active">
+            <span class="material-symbols-outlined"> inbox </span>
+            <h3>Mensajeria</h3>
+            <span class="message-count">26</span>
+          </a>
+          <a href="">
+            <span class="material-symbols-outlined"> logout </span>
+            <h3>Salir</h3>
+          </a>
+        </div>
+      </aside>
+      <main>
+        <h1>Clientes</h1>
+        <div class="cliente">
+          <table>
+            <thead>
+              <tr>
+                <th>nombre</th>
+                <th>rut</th>
+                <th>correo</th>
+                <th>fecha_nacimiento</th>
+                <th>genero</th>
+                <th>fono</th>
+                <th>direccion</th>
+                <th>fono_emergencia</th>
+                <th>nombre_emergencia</th>
+                <th>estado</th>
+                <th>derivar_a</th>
+                <th>createdAt</th>
+                <th>updatedAt</th>
+                <th>observar</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-clientes"></tbody>
+          </table>
+          <div class="ordenado">
+            <div class="col-6">
+              <label for="nput-nombre">id</label>
+              <input type="text" name="" id="input-id" disabled />
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">nombre</label>
+              <input type="text" name="" id="input-nombre" />
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">correo</label>
+              <input type="text" name="" id="input-correo" />
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">rut</label>
+              <input type="text" name="" id="input-rut" />
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">fecha de nacimiento</label>
+              <input type="text" name="" id="input-fecha_nacimiento" />
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">genero</label>
+              <input type="text" name="" id="input-genero" />
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">telefono</label>
+              <input type="text" name="" id="input-fono" />
+            </div>
+            <div class="col-6">
+              <label for="input-nombre">direccion</label>
+              <input type="text" name="" id="input-direccion" />
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">fono de emergencias</label>
+              <input type="text" name="" id="input-fono_emergencia" />
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">nombre de contacto de emergencias</label>
+              <input type="text" name="" id="input-nombre_emergencia" />
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">estado</label>
+              <select id="input-estado" name="select">
+                <option value="invalido">Invalido</option>
+                <option value="valido" selected>Valido</option>
+                <option value="baneado">Baneado</option>
+                <option value="eliminado">Eliminado</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label for="nput-nombre">derivacion de emergencia</label>
+              <input type="text" name="" id="input-derivar_a" />
+            </div>
+          </div>
+          <div>
+            <label for="cliente-update-button-label"></label>
+            <button id="cliente-update-button">Modificar</button>
+          </div>
+          <div>
+            <label for="cliente-delete-button-label"></label>
+            <button id="cliente-delete-button">Eliminar</button>
+          </div>
+          <!-- <table id="tablon">
+                    <tr>
+                        <th>Rut</th>
+                        <th>Nombre completo</th>
+                        <th>Correo</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Genero</th>
+                        <th>Telefono</th>
+                        <th>Direccion</th>
+                        <th>Telefono de emergencia</th>
+                        <th>Nombre de emergencia</th>
+                        <th>Estado</th>
+                        <th>Derivar a</th>
+                        <th>Creado en</th>
+                        <th>Actualizado en</th>
+                        <th></th>
+                    </tr> -->
+          <!-- <form  onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                        <div class="row">
+                            <div class="column">
+                                <div>
+                                    <label for="">Rut: </label>
+                                    <input type="text" name="rut">
+                                </div>
+                                <div>
+                                    <label for="">Nombre completo:</label>
+                                    <input type="text" name="nombre">
+                                </div>
+                                <div>  
+                                    <label for="">Fecha de nacimiento:</label>
+                                    <input type="text" name="fecha_nacimiento">
+                                </div>
+                                <div>
+                                    <label for="">Correo: </label>
+                                    <input type="text" name="correo">
+                                </div>
+                                <div>   
+                                    <label for="">Genero:</label>
+                                    <input type="text" name="genero">
+                                </div>
+                                
+                            </div>
+                            <div class="column">
+                                
+                                <div>
+                                    <label for="">Nombre de emergencia: </label>
+                                    <input type="text" name="nombre_emergencia">
+                                </div>
+                                <div>   
+                                    <label for="">Estado: </label>
+                                    <input type="text" name="estado">
+                                </div>
+                                <div>
+                                    <label for="">Derivar a: </label>
+                                    <input type="text" name="derivar_a">
+                                </div>
+                                <div>
+                                    <label for="">Creado en: </label>
+                                    <input type="text" name="createdAt">
+                                </div>
+                                <div>
+                                    <label for="">Actualizado en: </label>
+                                    <input type="text" name="updatedAt">
+                                </div>
+                            </div>
+                        </div>     
+                        <div class="form-action-buttons">
+                            <input type="submit" value="submit">
+                        </div>
+                    </form>  
+               </table>-->
+
+          <br />
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -9,49 +9,48 @@
   color: red;
 }
 
-#loginBox{
-  background-color: pink;
-  display: flex; 
+#loginBox {
+  display: flex;
   flex-direction: column;
 }
 
-#loginForm{
+#loginForm {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#loginCorreo{
+#loginCorreo {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-bottom: 8px;
 }
 
-#loginPass{
+#loginPass {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-bottom: 8px;
 }
 
-#labelCorreo{
+#labelCorreo {
   margin-right: 35px;
 }
-#labelPass{
+#labelPass {
   margin-right: 2px;
 }
 
-#formHeader{
+#formHeader {
   display: flex;
   justify-content: center;
 }
 
-#formButton{
+#formButton {
   max-width: 300px;
 }
 
-.input{
+.input {
   display: flex;
   justify-content: space-between;
   width: 100%;

@@ -16,7 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./js/admin.js"></script>
+    <script src="./js/noticias.js"></script>
   </head>
   <body>
     <div class="container">
@@ -33,7 +33,7 @@
             <span class="material-symbols-outlined"> dashboard </span>
             <h3>Dashboard</h3>
           </a>
-          <a href="/admin.html" class="active">
+          <a href="/admin.html">
             <span class="material-symbols-outlined"> person </span>
             <h3>Clientes</h3>
           </a>
@@ -49,7 +49,7 @@
             <span class="material-symbols-outlined"> imagesmode </span>
             <h3>Imagenes</h3>
           </a>
-          <a href="/noticias.html">
+          <a href="/noticias.html" class="active">
             <span class="material-symbols-outlined"> newspaper </span>
             <h3>Noticias</h3>
           </a>
@@ -73,93 +73,70 @@
         </div>
       </aside>
       <main>
-        <h1>Clientes</h1>
+        <h1>Noticias</h1>
         <div class="cliente">
           <table>
             <thead>
               <tr>
-                <th>nombre</th>
-                <th>rut</th>
-                <th>correo</th>
-                <th>fecha_nacimiento</th>
-                <th>genero</th>
-                <th>fono</th>
-                <th>direccion</th>
-                <th>fono_emergencia</th>
-                <th>nombre_emergencia</th>
-                <th>estado</th>
-                <th>derivar_a</th>
-                <th>createdAt</th>
-                <th>updatedAt</th>
-                <th>perfil</th>
+                <th>titulo</th>
+                <th>fecha</th>
+                <th>encabezado</th>
+                <th>cuerpo</th>
+                <th>user</th>
+                <th>imagen</th>
                 <th>observar</th>
               </tr>
             </thead>
-            <tbody id="tabla-clientes"></tbody>
+            <tbody id="tabla-noticias"></tbody>
           </table>
           <div class="inputs">
             <div class="ordenado">
-              <label>id:</label>
+              <label>id</label>
               <input type="text" name="" id="input-id" disabled />
             </div>
             <div class="ordenado">
-              <label>nombre:</label>
-              <input type="text" name="" id="input-nombre" />
+              <label>titulo</label>
+              <textarea type="text" name="" id="input-titulo"></textarea>
             </div>
             <div class="ordenado">
-              <label>correo:</label>
-              <input type="text" name="" id="input-correo" />
+              <label>fecha</label>
+              <input type="text" name="" id="input-fecha" disabled />
             </div>
             <div class="ordenado">
-              <label>rut:</label>
-              <input type="text" name="" id="input-rut" />
+              <label>encabezado</label>
+              <textarea type="text" name="" id="input-encabezado"></textarea>
             </div>
             <div class="ordenado">
-              <label>fecha de nacimiento:</label>
-              <input type="text" name="" id="input-fecha_nacimiento" />
+              <label>cuerpo</label>
+              <textarea type="text" name="" id="input-cuerpo"></textarea>
             </div>
             <div class="ordenado">
-              <label>genero:</label>
-              <input type="text" name="" id="input-genero" />
+              <label>user</label>
+              <input type="text" name="" id="input-user" disabled />
             </div>
             <div class="ordenado">
-              <label>telefono:</label>
-              <input type="text" name="" id="input-fono" />
-            </div>
-            <div class="ordenado">
-              <label for="input-nombre">direccion:</label>
-              <input type="text" name="" id="input-direccion" />
-            </div>
-            <div class="ordenado">
-              <label>fono de emergencias:</label>
-              <input type="text" name="" id="input-fono_emergencia" />
-            </div>
-            <div class="ordenado">
-              <label>nombre de contacto de emergencias:</label>
-              <input type="text" name="" id="input-nombre_emergencia" />
-            </div>
-            <div class="ordenado">
-              <label>derivacion de emergencia:</label>
-              <input type="text" name="" id="input-derivar_a" />
-            </div>
-            <div class="ordenado">
-              <label>estado:</label>
-              <select id="input-estado" name="select">
-                <option value="invalido">Invalido</option>
-                <option value="valido" selected>Valido</option>
-                <option value="baneado">Baneado</option>
-                <option value="eliminado">Eliminado</option>
-              </select>
-            </div>
-            <div class="ordenado">
-              <label>Perfil:</label>
-              <select id="select-perfil" name="select"></select>
+              <label>imagen</label>
+              <input type="text" name="" id="input-img" disabled />
             </div>
           </div>
           <div class="buttons">
-            <button class="btn" id="cliente-update-button">Modificar</button>
-            <button class="btn" id="cliente-delete-button">Eliminar</button>
+            <button class="btn" id="news-create-button">Crear</button>
+            <button class="btn" id="news-update-button">Modificar</button>
+            <button class="btn" id="news-delete-button">Eliminar</button>
           </div>
+          <br />
+          <table class="tblImg">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>url</th>
+                <th>alt</th>
+                <th>preview</th>
+                <th>observar</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-imagenes"></tbody>
+          </table>
         </div>
       </main>
     </div>
