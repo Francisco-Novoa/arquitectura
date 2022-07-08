@@ -1,5 +1,5 @@
 import express from "express";
-import { WEATHERAPI } from "../../utils/config.js";
+// import { WEATHERAPI } from "../../utils/config.js";
 import axios from "axios";
 export const weatherRouter = express.Router();
 

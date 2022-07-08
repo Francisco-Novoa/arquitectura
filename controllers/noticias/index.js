@@ -55,17 +55,24 @@ noticiasRouter.post("/", async (req, res) => {
 
 //crea ruta que obtiene todos los perfiles
 noticiasRouter.get("/", async (req, res) => {
-  const noticias = await sequelize.query(
-    `select n.id, n.titulo, n.fecha,
-        n.encabezado, n.cuerpo, n.prioridad,
-        u.nombre as username
-      from noticias n 
-      join usuarios u on n."usuarioId"  = u.id`
+  const [results, metadata] = await sequelize.query(
+    `with imagenes as (
+      select array_agg(json_build_object('url', i.url, 'alt', i.alt, 'id', i.id)) as imagen, ni."noticiaId"  from imagenes i 
+      join noticia_imagen ni on i.id=ni."imageneId"
+      group by ni."noticiaId"
+    ) select n.id, n.titulo, n.fecha,
+            n.encabezado, n.cuerpo, n.prioridad,
+            u.nombre as username, i.imagen 
+          from noticias n 
+          join usuarios u on n."usuarioId"  = u.id
+          join imagenes i on n.id = i."noticiaId"`
   );
-  // const noticias = await Noticia.raw({ include: [Imagen, User] });
   return res
     .status(200)
-    .json({ message: "Noticias obtenidas exitosamente", data: { noticias } });
+    .json({
+      message: "Noticias obtenidas exitosamente",
+      data: { noticias: results },
+    });
 });
 
 //crea ruta que obtiene un unico perfil
