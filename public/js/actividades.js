@@ -4,149 +4,133 @@ window.onload = async () => {
   console.log(token, userId);
   const [
     id,
-    titulo,
+    nombre,
+    descripcion,
+    hora,
     fecha,
-    encabezado,
-    cuerpo,
-    user,
-    img,
+    cupos,
+    traslado,
+    precio,
+    createButton,
     editButton,
     deleteButton,
-    createButton,
-    tablaImagenes,
+    tablaActividades,
   ] = [
     "input-id",
-    "input-titulo",
+    "input-nombre",
+    "input-descripcion",
+    "input-hora",
     "input-fecha",
-    "input-encabezado",
-    "input-cuerpo",
-    "input-user",
-    "input-img",
-    "news-update-button",
-    "news-delete-button",
-    "news-create-button",
-    "tabla-imagenes",
+    "input-cupos",
+    "input-traslado",
+    "input-precio",
+    "act-create-button",
+    "act-update-button",
+    "act-delete-button",
+    "tabla-actividades",
   ].map(id => document.getElementById(id));
 
-  // const loadData = news => () => {
-  //   console.log(news);
-  //   id.value = news.id;
-  //   titulo.value = news.titulo;
-  //   fecha.value = news.fecha;
-  //   encabezado.value = news.encabezado;
-  //   cuerpo.value = news.cuerpo;
-  //   user.value = news.username;
-  //   img.value = news.imagen ? news.imagen[0].url : "";
-  // };
+  const loadData = act => () => {
+    console.log(act);
+    id.value = act.id;
+    nombre.value = act.nombre;
+    descripcion.value = act.descripcion;
+    hora.value = new Date(act.hora).toISOString();
+    fecha.value = new Date(act.fecha).toISOString();
+    cupos.value = act.cupo;
+    traslado.value = act.cupo_traslado;
+    precio.value = act.precio;
+  };
 
-  // const loadNoticias = async () => {
-  //   const {
-  //     data: {
-  //       data: { noticias },
-  //     },
-  //   } = await axios.get("/api/noticias");
-  //   tablaNoticias.innerHTML = "";
-  //   noticias.map(news => {
-  //     const tableRow = document.createElement("tr");
-  //     tableRow.innerHTML = `
-  //             <td>${news.titulo}</td>
-  //             <td>${news.fecha}</td>
-  //             <td>${news.encabezado}</td>
-  //             <td>${news.cuerpo}</td>
-  //             <td>${news.username}</td>
-  //             <td>
-  //               ${news?.imagen?.map(
-  //                 imagen => `
-  //                   <img
-  //                       src="${news.imagen[0].url}"
-  //                       alt="${news.imagen[0].alt}"
-  //                       width="150px"
-  //                       heigth="150px"></img>
-  //                   `
-  //               )}
-  //             </td>
-  //             <td>
-  //               <button id="load-news-${news.id}">Cargar</button>
-  //             </td>`;
-  //     tablaNoticias.appendChild(tableRow);
-  //     document
-  //       .getElementById(`load-news-${news.id}`)
-  //       .addEventListener("click", loadData(news));
-  //   });
-  //   id.value = "";
-  //   titulo.value = "";
-  //   fecha.value = "";
-  //   encabezado.value = "";
-  //   cuerpo.value = "";
-  //   user.value = "";
-  //   img.value = "";
-  // };
+  const loadActividades = async () => {
+    const {
+      data: {
+        data: { actividad },
+      },
+    } = await axios.get("/api/actividad");
+    tablaActividades.innerHTML = "";
+    actividad.map(act => {
+      const tableRow = document.createElement("tr");
+      tableRow.innerHTML = `
+              <td>${act.nombre}</td>
+              <td>${act.descripcion}</td>
+              <td>${new Date(act.hora).toISOString()}</td>
+              <td>${new Date(act.fecha).toISOString()}</td>
+              <td>${act.cupo}</td>
+              <td>${act.cupo_traslado}</td>
+              <td>${act.precio}</td>
+              <td>
+                <button id="load-act-${act.id}">Cargar</button>
+              </td>`;
+      tablaActividades.appendChild(tableRow);
+      document
+        .getElementById(`load-act-${act.id}`)
+        .addEventListener("click", loadData(act));
+    });
+    id.value = "";
+    nombre.value = "";
+    fecha.value = "";
+    descripcion.value = "";
+    hora.value = "";
+    cupos.value = "";
+    traslado.value = "";
+    precio.value = "";
+  };
 
-  // const editarNoticia = async () => {
-  //   try {
-  //     const result = await axios.put(
-  //       `/api/noticias/${id.value}`,
-  //       {
-  //         titulo: titulo.value,
-  //         encabezado: encabezado.value,
-  //         cuerpo: cuerpo.value,
-  //         usuario: userId,
-  //       },
-  //       { Authorization: `bearer ${token}` }
-  //     );
-  //     loadNoticias();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  loadActividades();
 
-  // editButton.addEventListener("click", editarNoticia);
+  const editarActividad = async () => {
+    try {
+      const result = await axios.put(
+        `/api/actividad/${id.value}`,
+        {
+          nombre: nombre.value,
+          descripcion: descripcion.value,
+          hora: new Date(hora.value).toISOString(),
+          fecha: new Date(fecha.value).toISOString(),
+          cupo: cupos.value,
+          cupo_traslado: traslado.value,
+          precio: precio.value,
+        },
+        { Authorization: `bearer ${token}` }
+      );
+      loadActividades();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  // const eliminarNoticia = async () => {
-  //   try {
-  //     const result = await axios.delete(`/api/noticias/${id.value}`);
-  //     loadNoticias();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-  // deleteButton.addEventListener("click", eliminarNoticia);
+  editButton.addEventListener("click", editarActividad);
 
-  // const crearNoticia = async () => {
-  //   try {
-  //     const result = await axios.post(
-  //       `/api/noticias`,
-  //       {
-  //         titulo: titulo.value,
-  //         encabezado: encabezado.value,
-  //         cuerpo: cuerpo.value,
-  //         usuario: userId,
-  //       },
-  //       { Authorization: `bearer ${token}` }
-  //     );
-  //     loadNoticias();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-  // createButton.addEventListener("click", crearNoticia);
-  // loadNoticias();
+  const eliminarActividad = async () => {
+    try {
+      const result = await axios.delete(`/api/actividad/${id.value}`);
+      loadActividades();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  deleteButton.addEventListener("click", eliminarActividad);
 
-  // const addImagen = imgId => async () => {
-  //   if (!id.value) {
-  //     console.log(
-  //       "para asignar una imagen asegurate que una id ha sido cargada"
-  //     );
-  //     return null;
-  //   }
-  //   try {
-  //     const asignada = await axios.post("/api/noticias/addImagen", {
-  //       noticia: id.value,
-  //       imagen: imgId,
-  //     });
-  //     loadNoticias();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const crearActividad = async () => {
+    try {
+      const result = await axios.post(
+        `/api/actividad`,
+        {
+          nombre: nombre.value,
+          descripcion: descripcion.value,
+          hora: new Date(Date.now()).toISOString(),
+          fecha: new Date(Date.now()).toISOString(),
+          cupo: cupos.value,
+          cupo_traslado: traslado.value,
+          precio: precio.value,
+        },
+        { Authorization: `bearer ${token}` }
+      );
+      loadActividades();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  createButton.addEventListener("click", crearActividad);
 };

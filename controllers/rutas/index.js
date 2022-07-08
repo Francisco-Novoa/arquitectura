@@ -20,7 +20,7 @@ rutasRouter.post("/addImagen", async (req, res) => {
   });
 });
 
-rutasRouter.post("/", TokenValidation, async (req, res) => {
+rutasRouter.post("/", async (req, res) => {
   const { nombre, descripcion, dificultad, duracion, ubicacion, comentario } =
     req.body;
   if (!nombre)
@@ -69,7 +69,7 @@ rutasRouter.get("/:id", async (req, res) => {
     .json({ message: "ruta obtenida exitosamente", data: { rutas } });
 });
 
-rutasRouter.delete("/:id", TokenValidation, async (req, res) => {
+rutasRouter.delete("/:id", async (req, res) => {
   if (!(await Ruta.findByPk(req.params.id)))
     return res.status(404).send({ message: "ruta no encontrada" });
   await Ruta.destroy({
@@ -78,7 +78,7 @@ rutasRouter.delete("/:id", TokenValidation, async (req, res) => {
   res.sendStatus(204);
 });
 
-rutasRouter.put("/:id", TokenValidation, async (req, res) => {
+rutasRouter.put("/:id", async (req, res) => {
   const { nombre, descripcion, dificultad, duracion, ubicacion, comentario } =
     req.body;
   if (!(await Ruta.findByPk(req.params.id)))
@@ -102,7 +102,7 @@ rutasRouter.put("/:id", TokenValidation, async (req, res) => {
       .status(400)
       .send({ message: "no puede haber ruta sin ubicacion" });
   const rutas = await Ruta.update(
-    { nombre, descripcion, dificultad, duracion, ubicacion },
+    { nombre, descripcion, dificultad, duracion, ubicacion, comentario },
     {
       where: { id: req.params.id },
       returning: true,

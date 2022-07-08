@@ -116,7 +116,7 @@ actividadRouter.put("/:id", async (req, res) => {
       .status(400)
       .send({ message: "no puede haber una actividad sin cupos" });
   const actividad = await Actividad.update(
-    { hora, fecha, cupo, cupo_traslado, precio, estado },
+    { hora, fecha, descripcion, cupo, cupo_traslado, precio, estado },
     {
       where: { id: req.params.id },
       returning: true,

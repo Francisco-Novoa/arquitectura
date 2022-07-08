@@ -16,7 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./js/clientes.js"></script>
+    <script src="./js/rutas.js"></script>
   </head>
   <body>
     <div class="container">
@@ -66,67 +66,63 @@
             <h3>Mensajeria</h3>
             <span class="message-count">26</span>
           </a>
-          <a href="">
+          <a href="/">
             <span class="material-symbols-outlined"> logout </span>
             <h3>Salir</h3>
           </a>
         </div>
       </aside>
       <main>
-        <h1>Actividades</h1>
+        <h1>Rutas</h1>
         <div class="cliente">
           <table>
             <thead>
               <tr>
                 <th>nombre</th>
                 <th>descripcion</th>
-                <th>hora</th>
-                <th>fecha</th>
-                <th>cupos</th>
-                <th>cupos traslado</th>
-                <th>precio</th>
+                <th>dificultad</th>
+                <th>duracion</th>
+                <th>ubicacion</th>
+                <th>comentario</th>
                 <th>observar</th>
               </tr>
             </thead>
-            <tbody id="tabla-clientes"></tbody>
+            <tbody id="tabla-rutas"></tbody>
           </table>
           <div class="inputs">
             <div class="ordenado">
-              <label for="nput-nombre">id</label>
+              <label>id</label>
               <input type="text" name="" id="input-id" disabled />
             </div>
             <div class="ordenado">
-              <label for="nput-nombre">nombre</label>
+              <label>nombre</label>
               <input type="text" name="" id="input-nombre" />
             </div>
             <div class="ordenado">
-              <label for="nput-nombre">descripcion</label>
-              <input type="text" name="" id="input-correo" />
+              <label>descripcion</label>
+              <textarea type="text" name="" id="input-descripcion"></textarea>
             </div>
             <div class="ordenado">
-              <label for="nput-nombre">hora</label>
-              <input type="text" name="" id="input-rut" />
+              <label>dificultad</label>
+              <input type="text" name="" id="input-dificultad" />
             </div>
             <div class="ordenado">
-              <label for="nput-nombre">fecha</label>
-              <input type="text" name="" id="input-fecha_nacimiento" />
+              <label>duracion</label>
+              <input type="text" name="" id="input-duracion" />
             </div>
             <div class="ordenado">
-              <label for="nput-nombre">cupos</label>
-              <input type="text" name="" id="input-genero" />
+              <label>ubicacion</label>
+              <input type="text" name="" id="input-ubicacion" />
             </div>
             <div class="ordenado">
-              <label for="nput-nombre">cupos traslado</label>
-              <input type="text" name="" id="input-fono" />
-            </div>
-            <div class="ordenado">
-              <label for="input-nombre">precio</label>
-              <input type="text" name="" id="input-direccion" />
+              <label>comentario</label>
+              <textarea type="text" name="" id="input-comentario"></textarea>
             </div>
           </div>
           <div class="buttons">
-            <button class="btn" id="cliente-update-button">Modificar</button>
-            <button class="btn" id="cliente-delete-button">Eliminar</button>
+            <button class="btn" id="ruta-create-button">Crear</button>
+            <button class="btn" id="ruta-update-button">Modificar</button>
+            <button class="btn" id="ruta-delete-button">Eliminar</button>
           </div>
           <br />
         </div>
