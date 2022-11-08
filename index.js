@@ -5,10 +5,7 @@ import { PORT } from "./utils/config.js";
 import { info } from "./utils/logger.js";
 
 //inicializa la coneccion a la base de datos
-import "./database/database.js";
-
-//ejecuta la creacion de todas las tablas
-import "./models/index.js";
+import "./database/index.js";
 
 const server = http.createServer(app);
 
