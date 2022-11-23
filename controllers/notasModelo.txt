@@ -1,0 +1,9 @@
+direccion en local esta definido como numero
+CAMBIAR NOMBRE A LOCAL, INTERFIERE
+EN PRODUCTO CAMBIAR NOMBRE A DESC, SE LEE COMO KEYWORD
+añadir sub total a pedido
+añadir passwordhash a usuario
+añadir id a usuario
+sacar llave compuesta a usuario
+agregar logo a local
+añadir numero de elementos a item_pedido
