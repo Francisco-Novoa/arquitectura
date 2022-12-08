@@ -7,6 +7,7 @@
     <title>El comienzo de algo hermoso</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <header class="header" id="">
@@ -40,16 +41,16 @@
     </header>
 
     <section class="banner">
-       <img src="./assets/images/Restaurantes/slate-board-with-sushi-set-white-background.jpg" alt="" >
+       <img src="./assets/images/Restaurantes/banner.PNG" alt="" >
     </section>
     <main class="main-restaurant">
         <section class="main">
             <div class="sidebar">
                 <ul class="detalleMenu">
-                    <li><a href="#picked-for-you">Picked for you</a></li>
-                    <li><a href="#rolls-premium">Rolls premium</a></li>
-                    <li><a href="#rolls-sin-arroz">Rolls sin arroz</a></li>
-                    <li><a href="#cevicheria">Cevichería</a></li>
+                    <li><a href="#picked-for-you">Pollo</a></li>
+                    <li><a href="#rolls-premium">Acompañamientos</a></li>
+                    <li><a href="#rolls-sin-arroz">Postres</a></li>
+                    <li><a href="#cevicheria">Ensaladas</a></li>
                     <li><a href="#bebidas">Bebidas</a></li>
                     <li><a href="#para compartir">Para compartir</a></li>
                     <li><a href="#cervezas">Cervezas</a></li>
@@ -60,92 +61,7 @@
                     <div class="tituloMenu">
                         <h2 id="picked-for-you">Picked for you</h2>
                     </div>
-                    <div class="items">
-                        <div class="item">
-                            <img class="descriptionPhoto" src="https://images.pexels.com/photos/271715/pexels-photo-271715.jpeg?cs=srgb&dl=pexels-pixabay-271715.jpg&fm=jpg&_gl=1*1f79mul*_ga*MTkyNjM3MTAyMi4xNjY4Nzc2MzU5*_ga_8JE65Q40S6*MTY2ODc3NjM2MC4xLjEuMTY2ODc3NjM2Ni4wLjAuMA.." alt="">
-                            <div class="itemDescription">
-                                <div class="description-button">
-                                    <div class="description">
-                                        <p class="nombre-producto">UzumakiNaruto</p>
-                                        <p class="valor-producto">$650</p>
-    
-                                    </div>
-                                    <div class="addItem">
-                                        <a href="#">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </a>
-                                    </div>    
-                                </div>
-                            </div>              
-                        </div>
-                        <div class="item">
-                            <img class="descriptionPhoto" src="https://images.pexels.com/photos/271715/pexels-photo-271715.jpeg?cs=srgb&dl=pexels-pixabay-271715.jpg&fm=jpg&_gl=1*1f79mul*_ga*MTkyNjM3MTAyMi4xNjY4Nzc2MzU5*_ga_8JE65Q40S6*MTY2ODc3NjM2MC4xLjEuMTY2ODc3NjM2Ni4wLjAuMA.." alt="">
-                            <div class="itemDescription">
-                                <div class="description-button">
-                                    <div class="description">
-                                        <p class="nombre-producto">UzumakiNaruto</p>
-                                        <p class="valor-producto">$650</p>
-    
-                                    </div>
-                                    <div class="addItem">
-                                        <a href="#">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </a>
-                                    </div>    
-                                </div>
-                            </div>              
-                        </div>
-                        <div class="item">
-                            <img class="descriptionPhoto" src="https://images.pexels.com/photos/271715/pexels-photo-271715.jpeg?cs=srgb&dl=pexels-pixabay-271715.jpg&fm=jpg&_gl=1*1f79mul*_ga*MTkyNjM3MTAyMi4xNjY4Nzc2MzU5*_ga_8JE65Q40S6*MTY2ODc3NjM2MC4xLjEuMTY2ODc3NjM2Ni4wLjAuMA.." alt="">
-                            <div class="itemDescription">
-                                <div class="description-button">
-                                    <div class="description">
-                                        <p class="nombre-producto">UzumakiNaruto</p>
-                                        <p class="valor-producto">$650</p>
-    
-                                    </div>
-                                    <div class="addItem">
-                                        <a href="#">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </a>
-                                    </div>    
-                                </div>
-                            </div>              
-                        </div>
-                        <div class="item">
-                            <img class="descriptionPhoto" src="https://images.pexels.com/photos/271715/pexels-photo-271715.jpeg?cs=srgb&dl=pexels-pixabay-271715.jpg&fm=jpg&_gl=1*1f79mul*_ga*MTkyNjM3MTAyMi4xNjY4Nzc2MzU5*_ga_8JE65Q40S6*MTY2ODc3NjM2MC4xLjEuMTY2ODc3NjM2Ni4wLjAuMA.." alt="">
-                            <div class="itemDescription">
-                                <div class="description-button">
-                                    <div class="description">
-                                        <p class="nombre-producto">UzumakiNaruto</p>
-                                        <p class="valor-producto">$650</p>
-    
-                                    </div>
-                                    <div class="addItem">
-                                        <a href="#">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </a>
-                                    </div>    
-                                </div>
-                            </div>              
-                        </div>
-                        <div class="item">
-                            <img class="descriptionPhoto" src="https://images.pexels.com/photos/271715/pexels-photo-271715.jpeg?cs=srgb&dl=pexels-pixabay-271715.jpg&fm=jpg&_gl=1*1f79mul*_ga*MTkyNjM3MTAyMi4xNjY4Nzc2MzU5*_ga_8JE65Q40S6*MTY2ODc3NjM2MC4xLjEuMTY2ODc3NjM2Ni4wLjAuMA.." alt="">
-                            <div class="itemDescription">
-                                <div class="description-button">
-                                    <div class="description">
-                                        <p class="nombre-producto">UzumakiNaruto</p>
-                                        <p class="valor-producto">$650</p>
-    
-                                    </div>
-                                    <div class="addItem">
-                                        <a href="#">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </a>
-                                    </div>    
-                                </div>
-                            </div>              
-                        </div>
+                    <div id="item-box" class="items">
                     </div>    
                 </div>
             </div>

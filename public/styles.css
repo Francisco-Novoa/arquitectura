@@ -5,6 +5,7 @@
     --deep-color: #55505cff;
     --important-color: #faf33eff;
 }
+
 *{
     padding: 0;
     margin: 0;
@@ -72,9 +73,7 @@ div .restaurant{
     margin-top: 2rem;
 }
 
-.section-title{
-    
-}
+
 
 .restaurantes-content{
     display: grid;
@@ -335,10 +334,9 @@ div .restaurant{
 }
 
 .banner img{
+    min-height: 100%;
     max-width: 150%;
     width: 150%;
-    margin-top: -32rem;
-    margin-bottom: -32rem;
 }
 
 .main{
@@ -380,14 +378,10 @@ div .restaurant{
 
 }
 
-
-
 .item{
     display: grid;
     width: 100%;
-
 }
-
 
 .itemDescription{
     font-size: 2vh;
@@ -420,6 +414,7 @@ div .restaurant{
  
 .volver-restaurant{
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 .volver-restaurant a{
     
@@ -625,4 +620,131 @@ footer{
 
 .closebtn{
     font-size: 3rem;
+}
+
+/* Pago */
+.contenedor-direccion, .contenedor-metodo-pago{
+    width: 500px;
+}
+
+.contenedor-pagos{
+    display: block;
+}
+
+.detalles-pago{
+    display: flex;
+    flex-direction: row;
+    justify-content:center
+    
+}
+
+.detalles-pago-uno{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+}
+
+.descripcion-direccion, .descripcion-pago{
+    display: flex;
+    justify-content:flex-start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.detalle-productos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.right-button{
+    padding-left: 35%;
+}
+
+.titulo-seccion{
+    font-size: 13px;
+}
+
+.espacio{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.radio-entrega{
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+
+.direccion{
+    display: flex;
+}
+.modificar{
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    margin: 0;
+    text-decoration: none;
+    background: rgb(238, 238, 238);
+    color: black;
+    cursor: pointer;
+    text-align: center;
+}
+
+.descripcion-entrega{
+    display: flex;
+    justify-content:space-evenly;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.entrega{
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+.direccion-icon{
+    padding: 5px;
+}
+
+.detalles-pago-dos{
+    margin-left: 5%;
+}
+
+.detalles-pago-dos h1{
+    font-size: 20px;
+   
+    margin-bottom: 1rem;
+
+}
+.detalles-pago-dos p{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.detalles-pago hr{
+    
+    margin-bottom: 2rem;
+}
+
+.subtotal, .valor-envio, .valor-servicio, .total{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.pag{
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    margin: 0;
+    text-decoration: none;
+    background: rgb(5, 5, 5);
+    color: rgb(209, 196, 196);
+    cursor: pointer;
+    text-align: center;
 }
