@@ -7,14 +7,15 @@
     <title>El comienzo de algo hermoso</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="carrito.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
     <header class="header" id="">
-        
-
             <nav class="navbar">
                 <div class="logo">
-                    <a href=""><img src="/assets/images/categorias/yacaeatsicon2.png"
+                    <a href="/"><img src="/assets/images/categorias/yacaeatsicon2.png"
                         width="200px" alt=""></a>
                 </div>
                 <div class="direccionSetter">
@@ -34,7 +35,6 @@
                     <button class="cartButton"  onclick="openNav()" type="button"><i class="fa fa-cart-shopping"></i></button>
                 </div>
             </nav>
-        
         </header>
         
 
@@ -43,36 +43,76 @@
         
     </section>
 
-    <section class="contenedor">
-        <div class="volver-restaurant">
-            <a href=""><i class="fa-solid fa-arrow-left"></i> Volver a NOMBRE RESTAURANT</a>
+    <section> 
+    </section>
+    <section class="container">
+        <div class="title" >
+            <h1 id="title">Carrito de compra</h1>
         </div>
-        <div class="producto">
-            <div class="foto-producto">
-                <img width="400px" src="https://images.pexels.com/photos/271715/pexels-photo-271715.jpeg?cs=srgb&dl=pexels-pixabay-271715.jpg&fm=jpg&_gl=1*1f79mul*_ga*MTkyNjM3MTAyMi4xNjY4Nzc2MzU5*_ga_8JE65Q40S6*MTY2ODc3NjM2MC4xLjEuMTY2ODc3NjM2Ni4wLjAuMA.." alt="">
-           </div>
-           <div class="descripcion-producto">
-            <h1 class="">Uzumaki Naruto</h1>
-            <h2 class="">CLP 600</h2>
-            <p class="">Rico rico sushi</p>
-            <div class="select">
-                <select class="cantidad" name="" id="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                </select>
+        <div class="lista" id="product-list">
+        </div>
+        
+        <div class="list-item">
+            <h3>
+                IVA
+            </h3>
+            <h3 id="iva"></h3>
+        </div>
+        <div class="list-item">
+            <h3>
+                Sub Total
+            </h3>
+            <h3 id="subtotal"></h3>
+        </div>
+        <div class="pagar">
+            <h3>
+                Costo de envio
+            </h3>
+            <div>
+                <h3>
+                    $1500
+                </h3>
             </div>
-            
-            <button class="descripcion boton-producto">
-                agregar 1 al pedido - precio CLP600
-            </button>
-           </div>
         </div>
-    
+        <div class="pagar">
+            <h3>
+                Comision
+            </h3>
+            <div>
+                <h3>
+                    $500
+                </h3>
+            </div>
+        </div>
+        <div class="pagar">
+            <h2>
+                Total
+            </h2>
+            <div>
+                <h3 id="total">
+                    $1000
+                </h3>
+            </div>
+        </div>
+        <div class="pay hidden" id="payBox">
+            <button id="paybutton">Pagar</button>
+        </div>
+        <div  class="message">
+            <h2 id="msg" class="hidden">Compra hecha exitosamente</h2>
+            <div id="seg" class="hidden">
+                <h2>Numero de Seguimiento</h2>
+                <h2 id="seguimiento"></h2>
+            </div>
+        </div>
+        <div class="pagar hidden" id="pedido_estado_container">
+            <h2>
+                Estado del Pedido
+            </h2>
+            <div>
+                <h3 id="estado_pedido">
+                </h3>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -178,6 +218,6 @@
     </div>
   </div>
 </div>
-    <script src="index.js"></script>
+    <script src="carrito.js"></script>
 </body>
 </html>

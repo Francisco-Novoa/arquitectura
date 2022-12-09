@@ -38,9 +38,9 @@ localRouter.delete("/:id", async (req, res) => {
 localRouter.put("/:id", async (req, res) => {
   if (!(await Local.findByPk(req.params.id)))
     return res.status(404).json({ error: "local no encontrado" });
-  const { nombre } = req.body;
+  const { nombre, direccion, logo, usuarioId  } = req.body;
   const local = await Local.update(
-    { nombre },
+    { nombre, direccion, logo, usuarioId  },
     {
       where: { id: req.params.id },
       returning: true,

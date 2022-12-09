@@ -16,5 +16,3 @@ MainRouter.use("/local", localRouter);
 MainRouter.use("/producto", productoRouter);
 MainRouter.use("/pedido", pedidoRouter);
 MainRouter.use("/item_pedido", itemPedidoRouter);
-
-// MainRouter.use("/productos", productosRouter);

@@ -92,7 +92,6 @@ div .restaurant{
 .restaurant-box{
     display: flex;
     flex-direction: column;
-    max-width: 300px;
 }
 
 
@@ -332,13 +331,13 @@ div .restaurant{
 .banner{
     display: flex;  
     overflow: hidden;
-    max-height: 300px;
 }
 
 .banner img{
-    min-height: 100%;
     max-width: 150%;
     width: 150%;
+    margin-top: -32rem;
+    margin-bottom: -32rem;
 }
 
 .main{
@@ -380,49 +379,34 @@ div .restaurant{
 
 }
 
-.item {
+.item{
     display: grid;
     width: 100%;
-    margin: 8px;
 }
 
 .itemDescription{
-    font-size: 16px;
+    font-size: 2vh;
 }
 .description-button{
     display: flex;
     justify-content: space-between;
-    text-align: center;
-    font-size: 16px;
-    align-items: center;
 }
 
+
 .itemDescription .addItem{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(238, 238, 238);
     max-width: fit-content;
     border-radius: 15%;
-    margin-right: 16px;
-    border: none;
-    padding: 4px;
-    font-size: 16px;
-    margin: 8px;
-}
-
-.addItem * {
-    margin: 8px;
 }
 
 .itemDescription i{
     color: black;
-    font-size: 24px;
+    font-size: 5rem;
 }
 
 .item .descriptionPhoto{
     max-width: 33rem;
-    max-height: 200px;
+
 }
 
 .menu{
@@ -450,12 +434,7 @@ div .restaurant{
     padding-top: 5rem;
 }
 
-.description{
-    padding-top: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
+.descripcion{
     padding-bottom: 1rem;
 }
 
@@ -503,7 +482,7 @@ footer{
     padding: 70px 0;
     box-sizing: border-box;
     margin-top: auto;
-    
+    flex-shrink: 0;
 }
  .inner_footer{
     
@@ -769,4 +748,153 @@ footer{
     color: rgb(209, 196, 196);
     cursor: pointer;
     text-align: center;
+}
+
+/* Crear producto */
+.main-crearProducto{
+    display: flex;
+    margin-top: 5rem;
+    padding-bottom:5%;
+
+}   
+
+.sidebar-menuRestaurant{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.estado-aceptacion{
+    font-size: 15px;
+    background-color: rgba(43, 161, 43, 0.644);
+    padding: 10px 10px 10px 6px;
+    width: 81%;
+}
+
+.detalleMenuRestaurant{
+    width: 100%;
+}
+
+.detalle-menuRestaurant-tab{
+  width: 90%;
+  
+}
+
+.detalle-menuRestaurant-tab button{
+display: block;
+background-color: inherit;
+color: black;
+padding: 10px 10px 10px 6px;
+width: 100%;
+border: none;
+outline: none;
+text-align: left;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.detalle-menuRestaurant-tab button:hover {
+    background-color: #ddd;
+  }
+
+.detalle-menuRestaurant-tab button.active {
+    background-color: #ccc;
+  }
+
+.detalle-menuRestaurant a{
+    font-size: 20px;
+}
+
+.detalle-menuRestaurant li{
+    margin-bottom: 20px;
+}
+
+
+.tituloDetalleMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.tabla-items{
+    border-spacing: 20px;
+    font-size: 15px;
+    width: 90%;
+   
+}
+
+.table-header{
+    border: 2px solid black;
+ 
+}
+
+.agregarItem{
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 15rem;
+    margin: 0;
+    text-decoration: none;
+    background: rgb(5, 5, 5);
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+/* agregar item form */
+
+.detalleAgregarItem{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 20%;
+}
+
+.item-form{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.item-form .agregarProducto{
+    padding-top: 3rem;
+}
+
+.item-form input[type=text]{
+    width: 100%;
+    padding: 10px 15px;
+    margin: 8px 0px;
+}
+
+.item-form button[type=submit] {
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.item-form input[type=button] {
+    
+    width: 100%;
+    background-color: #33ac80;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.item-form form{
+    padding:30px
+}
+
+form label{
+    font-size: 15px;
 }

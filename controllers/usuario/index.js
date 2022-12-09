@@ -31,3 +31,16 @@ usuarioRouter.post("/", async (req, res) => {
   });
 });
 
+usuarioRouter.get("/rest", async (req, res) => {
+  const usuarios = await Usuario.findAll(
+    {
+        where: {
+          tipoUsuarioNombre: "restaurant"
+        }
+    },
+  );
+  res.status(201).json({
+    message: "usuarios obtenidos exitosamente",
+    data: { usuarios },
+  });
+});

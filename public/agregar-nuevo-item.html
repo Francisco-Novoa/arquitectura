@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El comienzo de algo hermoso</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="second-styles.html.css">
 </head>
 <body>
     <header class="header" id="">
@@ -17,24 +16,11 @@
                 <div class="logo">
                     <a href="/index.html"><img src="/assets/images/categorias/yacaeatsicon2.png"
                         width="200px" alt=""></a>
+                        <p style="font-size: 15px;">Restaurant</p>
                 </div>
-                <div class="direccionSetter">
-                    <button id="myBtn">
-                        <i class="fa fa-location-dot"></i>Dominica 404
-                    </button>
-                </div>
-                <div class="searchBar">
-                    <input type="text" placeholder="Pizza">
-                    <button type="button">
-                        <i class="fa fa-magnifying-glass"></i>
-                    </button>
-                </div>
+                
                 <div class="login-cart">
                     <button class="userButton" type="button"><i class="fa-solid fa-user"></i></button>
-                    <button class="cartButton" type="button">
-                        <a href="carrito.html">
-                            <i class="fa fa-cart-shopping"></i></button>
-                        </a>
                 </div>
             </nav>
         
@@ -42,33 +28,48 @@
         </header>
     </header>
 
-    <section class="banner" id="banner">
-    </section>
-    <main class="main-restaurant">
-        <section class="main">
-            <div class="sidebar">
-                <ul class="detalleMenu">
-                    <li><a href="#picked-for-you">Pollo</a></li>
-                    <li><a href="#rolls-premium">Acompañamientos</a></li>
-                    <li><a href="#rolls-sin-arroz">Postres</a></li>
-                    <li><a href="#cevicheria">Ensaladas</a></li>
-                    <li><a href="#bebidas">Bebidas</a></li>
-                    <li><a href="#para compartir">Para compartir</a></li>
-                    <li><a href="#cervezas">Cervezas</a></li>
+    <main class="main-crearProducto">
+            <div class="sidebar-menuRestaurant">
+                <ul class="detalle-menuRestaurant-tab">
+                    <li><button class="tablinks" onclick="openTab(event, 'menu')">Menu</button></li>
+                    <li><button class="tablinks">Historial</button></li>
+                    <li><button class="tablinks">Ordenes</button></li>
+                    <li><button class="tablinks">Configuracion</button></li>  
                 </ul>
-            </div>
-            <div class="menu">
-                <div class="one">
-                    <div class="tituloMenu">
-                        <h2 id="picked-for-you">Nuestros Productos</h2>
-                    </div>
-                    <div id="item-box" class="items">
-                    </div>    
+                <div class="estado-aceptacion">
+                    <p>Aceptando ordenes: Activo</p> 
                 </div>
             </div>
-    
-        </section>
+            <div id="menu" class="detalleAgregarItem">
+                <div class="tituloDetalleMenu">
+                    <h1>Agregar producto</h1>
+                </div>
+                <div class="item-form">
+                    <form action="">
+                        <div class="formNombreProducto">
+                            <label for="">Nombre</label>
+                            <input type="text" name="nombre" type="text" class="" required> 
+                        </div>
+                        <div class="formPrecioProducto">
+                            <label for="">Precio</label>
+                            <input type="text" name="precio" type="text" class="" required> 
+                        </div>
+                        <div class="formDescripcionProducto">
+                            <label for="">Descripcion</label>
+                            <input type="text" name="descripcion" type="text" class="" required> 
+                        </div>
+                        <div class="uploadPhoto">
+                            <input type="button" value="Subir foto">
+                        </div>
+                        
+                    </form>
+                    <div class="agregarProducto">
+                        <button type="submit">Agregar producto</button>
+                    </div>
+                </div>
+            </div>
     </main>
+
     <footer>
         <div class="inner_footer">
             <div class="logo_container">

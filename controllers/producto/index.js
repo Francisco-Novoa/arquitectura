@@ -3,6 +3,17 @@ import { Producto } from "../../models/index.js";
 
 export const productoRouter = express.Router();
 
+productoRouter.get("/of/:id", async (req, res) => {
+  const producto = await Producto.findAll({
+    where: {
+      localId: req.params.id
+    }
+  });
+  res
+    .status(200)
+    .json({ message: "Productos obtenidos exitosamente", data: { producto } });
+});
+
 productoRouter.post("/", async (req, res) => {
   const { nombre, descripcion, foto, precio, localId } = req.body;
   const producto = await Producto.create({ nombre, descripcion, foto, precio, localId });
