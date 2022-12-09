@@ -33,40 +33,31 @@
     <main class="main-crearProducto">
             <div class="sidebar-menuRestaurant">
                 <ul class="detalle-menuRestaurant-tab">
-                    <li><button class="tablinks" > <a href="menu.html">Menu</a></button></li>
+                    <li><button class="tablinks success" > Menu</button></li>
                     <li><button class="tablinks">Historial</button></li>
                     <li><button class="tablinks"><a href="ordenes.html">Ordenes</a></button></li>
                     <li><button class="tablinks">Configuracion</button></li>  
-                    <li><button class="tablinks success">Crear Productos</button></li>  
-
+                    <li><button class="tablinks"><a href="/crear-producto.html">Crear Productos</a></button></li>  
                 </ul>
             </div>
-            <div id="menu" class="detalleAgregarItem">
+            <div id="menu" class="detalleMenuRestaurant">
                 <div class="tituloDetalleMenu">
-                    <h1>Agregar producto</h1>
+                    <h1>Items</h1>
                 </div>
-                <div class="item-form">
-                    <form action="">
-                        <div class="formNombreProducto">
-                            <label for="">Nombre</label>
-                            <input type="text" name="nombre" type="text" class="" required> 
-                        </div>
-                        <div class="formPrecioProducto">
-                            <label for="">Precio</label>
-                            <input type="text" name="precio" type="text" class="" required> 
-                        </div>
-                        <div class="formDescripcionProducto">
-                            <label for="">Descripcion</label>
-                            <input type="text" name="descripcion" type="text" class="" required> 
-                        </div>
-                        <div class="uploadPhoto">
-                            <input type="button" value="Subir foto">
-                        </div>
-                        
-                    </form>
-                    <div class="agregarProducto">
-                        <button type="submit">Agregar producto</button>
-                    </div>
+                <div class="contenedor-tabla-productos">
+                        <table class="tabla-items">
+                            <thead class="tabla-header">
+                                <tr>
+                                    <th>Foto</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Descripcion</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productBody">
+                            </tbody>
+                        </table>
+
                 </div>
             </div>
     </main>
@@ -131,6 +122,6 @@
     </div>
   </div>
 </div>
-    <script src="index.js"></script>
+    <script src="menu.js"></script>
 </body>
 </html>

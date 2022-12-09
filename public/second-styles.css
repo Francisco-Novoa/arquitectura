@@ -28,6 +28,9 @@ body{
     min-height: 100%;
 }
 
+a {
+    color: #000000;
+}
 
 /* restaurant section */
 
@@ -765,9 +768,12 @@ footer{
 }
 .estado-aceptacion{
     font-size: 15px;
-    background-color: rgba(43, 161, 43, 0.644);
     padding: 10px 10px 10px 6px;
     width: 81%;
+}
+
+.success {
+    background-color: rgba(43, 161, 43, 0.644) !important
 }
 
 .detalleMenuRestaurant{
@@ -897,4 +903,19 @@ transition: 0.3s;
 
 form label{
     font-size: 15px;
+}
+
+.productImg {
+    max-width: 200px;
+}
+.mini {
+    max-width: 100px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 4px;
+}
+.fat {
+    width: 100%;
 }

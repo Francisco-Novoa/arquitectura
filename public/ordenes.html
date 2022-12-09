@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El comienzo de algo hermoso</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="second-styles.html.css">
+    <link rel="stylesheet" href="second-styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
     <header class="header" id="">
@@ -31,41 +33,39 @@
     <main class="main-crearProducto">
             <div class="sidebar-menuRestaurant">
                 <ul class="detalle-menuRestaurant-tab">
-                    <li><button class="tablinks" onclick="openTab(event, 'menu')">Menu</button></li>
+                    <li><button class="tablinks" > <a href="menu.html">Menu</a></button></li>
                     <li><button class="tablinks">Historial</button></li>
-                    <li><button class="tablinks">Ordenes</button></li>
+                    <li><button class="tablinks success">Ordenes</button></li>
                     <li><button class="tablinks">Configuracion</button></li>  
+                    <li><button class="tablinks"><a href="/crear-producto.html">Crear Productos</a></button></li>  
+
                 </ul>
-                <div class="estado-aceptacion">
-                    <p>Aceptando ordenes: Activo</p> 
-                </div>
             </div>
-            <div id="menu" class="detalleAgregarItem">
+            <div id="menu" class="detalleMenuRestaurant">
                 <div class="tituloDetalleMenu">
-                    <h1>Agregar producto</h1>
+                    <h1>Items</h1>
                 </div>
-                <div class="item-form">
-                    <form action="">
-                        <div class="formNombreProducto">
-                            <label for="">Nombre</label>
-                            <input type="text" name="nombre" type="text" class="" required> 
-                        </div>
-                        <div class="formPrecioProducto">
-                            <label for="">Precio</label>
-                            <input type="text" name="precio" type="text" class="" required> 
-                        </div>
-                        <div class="formDescripcionProducto">
-                            <label for="">Descripcion</label>
-                            <input type="text" name="descripcion" type="text" class="" required> 
-                        </div>
-                        <div class="uploadPhoto">
-                            <input type="button" value="Subir foto">
-                        </div>
-                        
-                    </form>
-                    <div class="agregarProducto">
-                        <button type="submit">Agregar producto</button>
-                    </div>
+                <div class="contenedor-tabla-productos">
+                        <table class="tabla-items">
+                            <thead class="tabla-header">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Fecha</th>
+                                    <th>Iva</th>
+                                    <th>Comision</th>
+                                    <th>Propina</th>
+                                    <th>Subtotal</th>
+                                    <th>Total</th>
+                                    <th>Estado pedido</th>
+                                    <th>Productos</th>
+                                    <th>Acciones</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="orderBody">
+                            </tbody>
+                        </table>
+
                 </div>
             </div>
     </main>
@@ -130,6 +130,6 @@
     </div>
   </div>
 </div>
-    <script src="index.js"></script>
+    <script src="ordenes.js"></script>
 </body>
 </html>

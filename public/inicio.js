@@ -3,7 +3,6 @@ const target = document.getElementById("restaurants-box")
 const createRestaurante = (restaurantes) => {
     restaurantes.map((restaurante)=>{
         const rest = document.createElement("div")
-        console.log(restaurante)
         rest.innerHTML = `
         <div class="restaurant-box">
             <a href="restaurante.html?id=${restaurante.id}">
@@ -26,4 +25,3 @@ const getRestaurantes = async () => {
 }
 
 getRestaurantes()
-console.log(target)

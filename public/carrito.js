@@ -80,11 +80,11 @@ window.addEventListener("load", async function(event) {
                         productoId: producto.id
                     })
                 }))
-                console.log(pedido.id)
                 this.document.getElementById("seg").classList.remove("hidden")
                 this.document.getElementById("msg").classList.remove("hidden")
                 this.document.getElementById("seguimiento").innerHTML="#"+pedido.id
-
+                this.document.getElementById("link").href=`http://localhost:3000/carrito.html?id=${pedido.id}`
+                payButton.classList.add("hidden")
                 
             })
     
@@ -99,6 +99,5 @@ window.addEventListener("load", async function(event) {
         pedido.item_pedidos.map(({ cantidad, producto }) => {
             container.appendChild(addElements({ ...producto, cantidad}))
         })
-        console.log(pedido)
     }
 })
